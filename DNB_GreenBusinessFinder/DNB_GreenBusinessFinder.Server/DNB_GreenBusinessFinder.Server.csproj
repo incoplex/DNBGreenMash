@@ -274,6 +274,8 @@
       <LastGenOutput>EdmxFile3.Designer.cs</LastGenOutput>
       <EntityContainer>EdmxFile3</EntityContainer>
     </LightSwitchExternalDataSource>
+    <LightSwitchModel Include="DataSources\ApplicationData\NoteTypes.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Hazard_LatLongs.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

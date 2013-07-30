@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="UserPrefs">
+    Name="NoteType">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -34,15 +34,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="DUNSNumber"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="NoteCode"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -52,7 +43,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="NoteDescr"
+        Name="NoteDescription"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
@@ -60,40 +51,11 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="URL"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Longitude"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <VirtualNavigationProperty
-        Name="Greens"
-        FromEnd="UserPrefs"
-        ToEnd="Green"
-        VirtualAssociation="UserPrefs_Green" />
-      <EntityProperty
-        Name="Latitude"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <NavigationProperty
-        Name="NoteType"
+        Name="UserPrefsCollection"
         Association="UserPrefs_NoteType"
-        FromEnd="UserPrefs"
-        ToEnd="NoteType" />
+        FromEnd="NoteType"
+        ToEnd="UserPrefs" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -102,14 +64,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="UserPrefsSet"
+      Name="NoteTypes"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="UserPrefs" />
+      EntityType="NoteType" />
     <QueryOperation
-      Name="UserPrefsSet_Single"
-      ReturnType="UserPrefs">
+      Name="NoteTypes_Single"
+      ReturnType="NoteType">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -135,7 +97,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="UserPrefsSet" />
+            Member="NoteTypes" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -148,8 +110,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="UserPrefsSet_SingleOrDefault"
-      ReturnType="UserPrefs">
+      Name="NoteTypes_SingleOrDefault"
+      ReturnType="NoteType">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -175,7 +137,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="UserPrefsSet" />
+            Member="NoteTypes" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -187,48 +149,58 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="UserPrefs_NoteTypes"
+      Association="UserPrefs_NoteType">
+      <AssociationSetEnd
+        Name="UserPrefs"
+        EntitySet="UserPrefsSet" />
+      <AssociationSetEnd
+        Name="NoteType"
+        EntitySet="NoteTypes" />
+    </AssociationSet>
   </EntityContainer>
-  <VirtualAssociation
-    Name="UserPrefs_Green">
-    <VirtualAssociationEnd
+  <Association
+    Name="UserPrefs_NoteType">
+    <AssociationEnd
       Name="UserPrefs"
-      EntityType="UserPrefs" />
-    <VirtualAssociationEnd
-      Name="Green"
       Multiplicity="Many"
-      EntityType="Green" />
-  </VirtualAssociation>
-  <VirtualAssociationSet
-    Name="UserPrefs_Green_Set"
-    VirtualAssociation="UserPrefs_Green">
-    <VirtualAssociationSetEnd
-      Name="UserPrefs"
-      EntityContainer="ApplicationData"
-      EntitySet="UserPrefsSet">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="DUNSNumber" />
-    </VirtualAssociationSetEnd>
-    <VirtualAssociationSetEnd
-      Name="Green"
-      EntityContainer="DNBDeveloperSandboxContainerData"
-      EntitySet="Greens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="DUNSNumber" />
-    </VirtualAssociationSetEnd>
-  </VirtualAssociationSet>
+      EntityType="UserPrefs" />
+    <AssociationEnd
+      Name="NoteType"
+      Multiplicity="One"
+      EntityType="NoteType">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
   <DataService
     Name="ApplicationDataMapping">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
-    <EntitySetMapping
-      EntitySet="UserPrefsSet">
-      <EntitySetMapping.Attributes>
-        <SsdlForeignKeyProperty
-          Name="UserPrefs_NoteType"
-          Nullable="False"
-          Type="int" />
-      </EntitySetMapping.Attributes>
-    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="UserPrefs_NoteTypes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="UserPrefs_NoteTypes" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[UserPrefs_NoteTypes]/Members[UserPrefs]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserPrefs_NoteType" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[UserPrefs_NoteTypes]/Members[NoteType]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

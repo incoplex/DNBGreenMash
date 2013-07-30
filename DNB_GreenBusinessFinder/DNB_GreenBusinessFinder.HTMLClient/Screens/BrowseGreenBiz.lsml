@@ -21,7 +21,8 @@
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
             Name="GreenList"
-            Kind="Group">
+            Kind="Group"
+            View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
             <ContentItem
               Name="Green"
               Kind="Collection"
@@ -105,6 +106,53 @@
               </ControlPropertySource>
             </ContentItem.PropertySources>
           </ContentItem>
+          <ContentItem
+            Name="OtherScreens"
+            Kind="Group"
+            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Other Data Sources" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="ShowBrowseEDREnvironmentHazards"
+              Kind="Command">
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="!module/Methods[showBrowseEDREnvironmentHazards]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="ShowBrowse_nwCustomers"
+              Kind="Command">
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="!module/Methods[showBrowse_nwCustomers]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Name="Group1"
+            Kind="Group">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="SearchByState" />
+            </ContentItem.Attributes>
+          </ContentItem>
           <ContentItem.PropertySources>
             <ControlPropertySource
               Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
@@ -126,7 +174,7 @@
             Name="Greens_selectedItem"
             Kind="Details"
             DataType="Green"
-            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
             <ContentItem.Attributes>
               <DisplayName
                 Value="GreenBiz Details" />
@@ -286,7 +334,8 @@
             </ContentItem>
             <ContentItem
               Name="Group"
-              Kind="Group" />
+              Kind="Group"
+              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout" />
             <ContentItem
               Name="GreenSourceCodeName1"
               Kind="Value"

@@ -322,4 +322,70 @@
         Target="ServiceInterface:NorthwindEntitiesData" />
     </EntityContainer.Attributes>
   </EntityContainer>
+  <VirtualAssociation>
+    <VirtualAssociation.Attributes>
+      <Proxy
+        Target="ServiceInterface:UserPrefs_Green" />
+    </VirtualAssociation.Attributes>
+  </VirtualAssociation>
+  <VirtualAssociationSet>
+    <VirtualAssociationSet.Attributes>
+      <Proxy
+        Target="ServiceInterface:UserPrefs_Green_Set" />
+    </VirtualAssociationSet.Attributes>
+  </VirtualAssociationSet>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:NoteType" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:UserPrefs_NoteType" />
+    </Association.Attributes>
+  </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Hazard_LatLong" />
+    </EntityType.Attributes>
+  </EntityType>
+  <VirtualAssociation>
+    <VirtualAssociation.Attributes>
+      <Proxy
+        Target="ServiceInterface:Hazard_LatLong_LocationLatLong" />
+    </VirtualAssociation.Attributes>
+  </VirtualAssociation>
+  <VirtualAssociationSet>
+    <VirtualAssociationSet.Attributes>
+      <Proxy
+        Target="ServiceInterface:Hazard_LatLong_LocationLatLong_Set" />
+    </VirtualAssociationSet.Attributes>
+  </VirtualAssociationSet>
+  <VirtualAssociation>
+    <VirtualAssociation.Attributes>
+      <Proxy
+        Target="ServiceInterface:Hazard_LatLong_EnvironmentalHazardRankingByUS" />
+    </VirtualAssociation.Attributes>
+  </VirtualAssociation>
+  <VirtualAssociationSet>
+    <VirtualAssociationSet.Attributes>
+      <Proxy
+        Target="ServiceInterface:Hazard_LatLong_EnvironmentalHazardRankingByUS_Set" />
+    </VirtualAssociationSet.Attributes>
+  </VirtualAssociationSet>
+  <VirtualAssociation>
+    <VirtualAssociation.Attributes>
+      <Proxy
+        Target="ServiceInterface:Green_Hazard_LatLong" />
+    </VirtualAssociation.Attributes>
+  </VirtualAssociation>
+  <VirtualAssociationSet>
+    <VirtualAssociationSet.Attributes>
+      <Proxy
+        Target="ServiceInterface:Green_Hazard_LatLong_Set" />
+    </VirtualAssociationSet.Attributes>
+  </VirtualAssociationSet>
 </Application>

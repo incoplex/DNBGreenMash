@@ -95,6 +95,8 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\AddEditUserPrefs.lsml" />
+    <LightSwitchModel Include="Screens\BrowseEDREnvironmentHazards.lsml" />
     <LightSwitchModel Include="Screens\BrowseGreenBiz.lsml" />
     <LightSwitchModel Include="Screens\Browse_nwCustomers.lsml" />
   </ItemGroup>

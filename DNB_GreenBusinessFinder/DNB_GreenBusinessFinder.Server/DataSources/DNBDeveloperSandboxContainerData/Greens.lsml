@@ -137,6 +137,16 @@
       <EntityProperty
         Name="GreenCertificationNumber4"
         PropertyType=":String?" />
+      <VirtualNavigationProperty
+        Name="UserPrefs"
+        FromEnd="Green"
+        ToEnd="UserPrefs"
+        VirtualAssociation="UserPrefs_Green" />
+      <VirtualNavigationProperty
+        Name="Hazard_LatLongs"
+        FromEnd="Green"
+        ToEnd="Hazard_LatLong"
+        VirtualAssociation="Green_Hazard_LatLong" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -355,4 +365,32 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
+  <VirtualAssociation
+    Name="Green_Hazard_LatLong">
+    <VirtualAssociationEnd
+      Name="Green"
+      EntityType="Green" />
+    <VirtualAssociationEnd
+      Name="Hazard_LatLong"
+      Multiplicity="Many"
+      EntityType="Hazard_LatLong" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="Green_Hazard_LatLong_Set"
+    VirtualAssociation="Green_Hazard_LatLong">
+    <VirtualAssociationSetEnd
+      Name="Green"
+      EntityContainer="DNBDeveloperSandboxContainerData"
+      EntitySet="Greens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="DUNSNumber" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="Hazard_LatLong"
+      EntityContainer="ApplicationData"
+      EntitySet="Hazard_LatLongs">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Green_DUNSNumber" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
 </ServiceApplication>

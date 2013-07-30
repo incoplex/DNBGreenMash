@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="UserPrefs">
+    Name="Hazard_LatLong">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -34,34 +34,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="DUNSNumber"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="NoteCode"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="NoteDescr"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="255" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="URL"
+        Name="Latitude"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
@@ -76,24 +49,63 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <VirtualNavigationProperty
-        Name="Greens"
-        FromEnd="UserPrefs"
-        ToEnd="Green"
-        VirtualAssociation="UserPrefs_Green" />
       <EntityProperty
-        Name="Latitude"
+        Name="GeographyID"
+        PropertyType=":Int64">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <VirtualNavigationProperty
+        Name="LocationLatLong"
+        FromEnd="Hazard_LatLong"
+        ToEnd="LocationLatLong"
+        VirtualAssociation="Hazard_LatLong_LocationLatLong" />
+      <EntityProperty
+        Name="LocationLatLong_DUNSNumber"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <VirtualNavigationProperty
+        Name="EnvironmentalHazardRankingByUSPostalZipCode"
+        FromEnd="Hazard_LatLong"
+        ToEnd="EnvironmentalHazardRankingByUSPostalZipCode"
+        VirtualAssociation="Hazard_LatLong_EnvironmentalHazardRankingByUS" />
+      <EntityProperty
+        Name="EnvironmentalHazardRankingByUS_GeographyId"
         PropertyType=":String?">
         <EntityProperty.Attributes>
           <MaxLength
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Name="NoteType"
-        Association="UserPrefs_NoteType"
-        FromEnd="UserPrefs"
-        ToEnd="NoteType" />
+      <EntityProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <VirtualNavigationProperty
+        Name="Green"
+        FromEnd="Hazard_LatLong"
+        ToEnd="Green"
+        VirtualAssociation="Green_Hazard_LatLong" />
+      <EntityProperty
+        Name="Green_DUNSNumber"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -102,14 +114,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="UserPrefsSet"
+      Name="Hazard_LatLongs"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="UserPrefs" />
+      EntityType="Hazard_LatLong" />
     <QueryOperation
-      Name="UserPrefsSet_Single"
-      ReturnType="UserPrefs">
+      Name="Hazard_LatLongs_Single"
+      ReturnType="Hazard_LatLong">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -135,7 +147,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="UserPrefsSet" />
+            Member="Hazard_LatLongs" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -148,8 +160,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="UserPrefsSet_SingleOrDefault"
-      ReturnType="UserPrefs">
+      Name="Hazard_LatLongs_SingleOrDefault"
+      ReturnType="Hazard_LatLong">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -175,7 +187,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="UserPrefsSet" />
+            Member="Hazard_LatLongs" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -188,47 +200,4 @@
       </QueryOperationParameter>
     </QueryOperation>
   </EntityContainer>
-  <VirtualAssociation
-    Name="UserPrefs_Green">
-    <VirtualAssociationEnd
-      Name="UserPrefs"
-      EntityType="UserPrefs" />
-    <VirtualAssociationEnd
-      Name="Green"
-      Multiplicity="Many"
-      EntityType="Green" />
-  </VirtualAssociation>
-  <VirtualAssociationSet
-    Name="UserPrefs_Green_Set"
-    VirtualAssociation="UserPrefs_Green">
-    <VirtualAssociationSetEnd
-      Name="UserPrefs"
-      EntityContainer="ApplicationData"
-      EntitySet="UserPrefsSet">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="DUNSNumber" />
-    </VirtualAssociationSetEnd>
-    <VirtualAssociationSetEnd
-      Name="Green"
-      EntityContainer="DNBDeveloperSandboxContainerData"
-      EntitySet="Greens">
-      <VirtualAssociationSetEndProperty
-        EntityProperty="DUNSNumber" />
-    </VirtualAssociationSetEnd>
-  </VirtualAssociationSet>
-  <DataService
-    Name="ApplicationDataMapping">
-    <DataService.Attributes>
-      <Partial />
-    </DataService.Attributes>
-    <EntitySetMapping
-      EntitySet="UserPrefsSet">
-      <EntitySetMapping.Attributes>
-        <SsdlForeignKeyProperty
-          Name="UserPrefs_NoteType"
-          Nullable="False"
-          Type="int" />
-      </EntitySetMapping.Attributes>
-    </EntitySetMapping>
-  </DataService>
 </ServiceApplication>

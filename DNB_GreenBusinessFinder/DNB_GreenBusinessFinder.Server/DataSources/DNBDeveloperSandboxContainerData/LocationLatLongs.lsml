@@ -68,6 +68,11 @@
       <EntityProperty
         Name="AccuracyCode"
         PropertyType=":String?" />
+      <VirtualNavigationProperty
+        Name="Hazard_LatLong"
+        FromEnd="LocationLatLong"
+        ToEnd="Hazard_LatLong"
+        VirtualAssociation="Hazard_LatLong_LocationLatLong" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -217,4 +222,40 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
+  <VirtualAssociation
+    Name="Hazard_LatLong_LocationLatLong">
+    <VirtualAssociationEnd
+      Name="Hazard_LatLong"
+      EntityType="Hazard_LatLong" />
+    <VirtualAssociationEnd
+      Name="LocationLatLong"
+      Multiplicity="One"
+      EntityType="LocationLatLong" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="Hazard_LatLong_LocationLatLong_Set"
+    VirtualAssociation="Hazard_LatLong_LocationLatLong">
+    <VirtualAssociationSetEnd
+      Name="Hazard_LatLong"
+      EntityContainer="ApplicationData"
+      EntitySet="Hazard_LatLongs">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="LocationLatLong_DUNSNumber" />
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Longitude" />
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Latitude" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="LocationLatLong"
+      EntityContainer="DNBDeveloperSandboxContainerData"
+      EntitySet="LocationLatLongs">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="DUNSNumber" />
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Longitude" />
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Latitude" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
 </ServiceApplication>
