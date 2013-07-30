@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Veteran">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Company"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="InternationalDialingCode"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IndustryCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CongressDistrict"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranOwnedIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranSourceCodeName1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranSourceLevelCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranCertificationCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VietnamVeteranOwnedIndicator1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ServiceDisabledVeteranOwnedIndicator1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranBusinessEnterpriseIndicator1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedVeteranEnterpriseIndicator1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledVeteranBusinessEnterpriseIndicator1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranCertificationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranCertificationExpirationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranCertificationNumber1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Veteran1DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranSourceCodeName2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranSourceLevelCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranCertificationCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VietnamVeteranOwnedIndicator2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ServiceDisabledVeteranOwnedIndicator2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranBusinessEnterpriseIndicator2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedVeteranEnterpriseIndicator2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledVeteranBusinessEnterpriseIndicator2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranCertificationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranCertificationExpirationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranCertificationNumber2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Veteran2DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VietnamVeteranOwnedIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ServiceDisabledVeteranOwnedIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="VeteranBusinessEnterpriseIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedVeteranEnterpriseIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledVeteranBusinessEnterpriseIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="AlaskanNativeCorporationIndicator"
+        PropertyType=":String?" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Veterans"
+      EntityType="Veteran" />
+    <QueryOperation
+      Name="Veterans_Single"
+      ReturnType="Veteran">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Veterans" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Veterans_SingleOrDefault"
+      ReturnType="Veteran">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Veterans" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Veterans">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="Veteran"
+          EntityTypeNamespace="DNB.DeveloperSandbox"
+          Name="Veteran"
+          EntityType="Veteran" />
+        <CsdlProperty
+          Name="DUNSNumber"
+          Property="Veteran/Properties[DUNSNumber]" />
+        <CsdlProperty
+          Name="Company"
+          Property="Veteran/Properties[Company]" />
+        <CsdlProperty
+          Name="Address"
+          Property="Veteran/Properties[Address]" />
+        <CsdlProperty
+          Name="Address2"
+          Property="Veteran/Properties[Address2]" />
+        <CsdlProperty
+          Name="City"
+          Property="Veteran/Properties[City]" />
+        <CsdlProperty
+          Name="StateAbbrv"
+          Property="Veteran/Properties[StateAbbrv]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="Veteran/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="Country"
+          Property="Veteran/Properties[Country]" />
+        <CsdlProperty
+          Name="Phone"
+          Property="Veteran/Properties[Phone]" />
+        <CsdlProperty
+          Name="Fax"
+          Property="Veteran/Properties[Fax]" />
+        <CsdlProperty
+          Name="InternationalDialingCode"
+          Property="Veteran/Properties[InternationalDialingCode]" />
+        <CsdlProperty
+          Name="IndustryCode1"
+          Property="Veteran/Properties[IndustryCode1]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc1"
+          Property="Veteran/Properties[IndustryCodeDesc1]" />
+        <CsdlProperty
+          Name="CongressDistrict"
+          Property="Veteran/Properties[CongressDistrict]" />
+        <CsdlProperty
+          Name="VeteranOwnedIndicator"
+          Property="Veteran/Properties[VeteranOwnedIndicator]" />
+        <CsdlProperty
+          Name="VeteranSourceCodeName1"
+          Property="Veteran/Properties[VeteranSourceCodeName1]" />
+        <CsdlProperty
+          Name="VeteranSourceLevelCode1"
+          Property="Veteran/Properties[VeteranSourceLevelCode1]" />
+        <CsdlProperty
+          Name="VeteranCertificationCode1"
+          Property="Veteran/Properties[VeteranCertificationCode1]" />
+        <CsdlProperty
+          Name="VietnamVeteranOwnedIndicator1"
+          Property="Veteran/Properties[VietnamVeteranOwnedIndicator1]" />
+        <CsdlProperty
+          Name="ServiceDisabledVeteranOwnedIndicator1"
+          Property="Veteran/Properties[ServiceDisabledVeteranOwnedIndicator1]" />
+        <CsdlProperty
+          Name="VeteranBusinessEnterpriseIndicator1"
+          Property="Veteran/Properties[VeteranBusinessEnterpriseIndicator1]" />
+        <CsdlProperty
+          Name="DisadvantagedVeteranEnterpriseIndicator1"
+          Property="Veteran/Properties[DisadvantagedVeteranEnterpriseIndicator1]" />
+        <CsdlProperty
+          Name="DisabledVeteranBusinessEnterpriseIndicator1"
+          Property="Veteran/Properties[DisabledVeteranBusinessEnterpriseIndicator1]" />
+        <CsdlProperty
+          Name="VeteranCertificationDate1"
+          Property="Veteran/Properties[VeteranCertificationDate1]" />
+        <CsdlProperty
+          Name="VeteranCertificationExpirationDate1"
+          Property="Veteran/Properties[VeteranCertificationExpirationDate1]" />
+        <CsdlProperty
+          Name="VeteranCertificationNumber1"
+          Property="Veteran/Properties[VeteranCertificationNumber1]" />
+        <CsdlProperty
+          Name="Veteran1DateReceivedbyDnB"
+          Property="Veteran/Properties[Veteran1DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="VeteranSourceCodeName2"
+          Property="Veteran/Properties[VeteranSourceCodeName2]" />
+        <CsdlProperty
+          Name="VeteranSourceLevelCode2"
+          Property="Veteran/Properties[VeteranSourceLevelCode2]" />
+        <CsdlProperty
+          Name="VeteranCertificationCode2"
+          Property="Veteran/Properties[VeteranCertificationCode2]" />
+        <CsdlProperty
+          Name="VietnamVeteranOwnedIndicator2"
+          Property="Veteran/Properties[VietnamVeteranOwnedIndicator2]" />
+        <CsdlProperty
+          Name="ServiceDisabledVeteranOwnedIndicator2"
+          Property="Veteran/Properties[ServiceDisabledVeteranOwnedIndicator2]" />
+        <CsdlProperty
+          Name="VeteranBusinessEnterpriseIndicator2"
+          Property="Veteran/Properties[VeteranBusinessEnterpriseIndicator2]" />
+        <CsdlProperty
+          Name="DisadvantagedVeteranEnterpriseIndicator2"
+          Property="Veteran/Properties[DisadvantagedVeteranEnterpriseIndicator2]" />
+        <CsdlProperty
+          Name="DisabledVeteranBusinessEnterpriseIndicator2"
+          Property="Veteran/Properties[DisabledVeteranBusinessEnterpriseIndicator2]" />
+        <CsdlProperty
+          Name="VeteranCertificationDate2"
+          Property="Veteran/Properties[VeteranCertificationDate2]" />
+        <CsdlProperty
+          Name="VeteranCertificationExpirationDate2"
+          Property="Veteran/Properties[VeteranCertificationExpirationDate2]" />
+        <CsdlProperty
+          Name="VeteranCertificationNumber2"
+          Property="Veteran/Properties[VeteranCertificationNumber2]" />
+        <CsdlProperty
+          Name="Veteran2DateReceivedbyDnB"
+          Property="Veteran/Properties[Veteran2DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="SmallBusinessIndicator"
+          Property="Veteran/Properties[SmallBusinessIndicator]" />
+        <CsdlProperty
+          Name="VietnamVeteranOwnedIndicator"
+          Property="Veteran/Properties[VietnamVeteranOwnedIndicator]" />
+        <CsdlProperty
+          Name="ServiceDisabledVeteranOwnedIndicator"
+          Property="Veteran/Properties[ServiceDisabledVeteranOwnedIndicator]" />
+        <CsdlProperty
+          Name="VeteranBusinessEnterpriseIndicator"
+          Property="Veteran/Properties[VeteranBusinessEnterpriseIndicator]" />
+        <CsdlProperty
+          Name="DisadvantagedVeteranEnterpriseIndicator"
+          Property="Veteran/Properties[DisadvantagedVeteranEnterpriseIndicator]" />
+        <CsdlProperty
+          Name="DisabledVeteranBusinessEnterpriseIndicator"
+          Property="Veteran/Properties[DisabledVeteranBusinessEnterpriseIndicator]" />
+        <CsdlProperty
+          Name="AlaskanNativeCorporationIndicator"
+          Property="Veteran/Properties[AlaskanNativeCorporationIndicator]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

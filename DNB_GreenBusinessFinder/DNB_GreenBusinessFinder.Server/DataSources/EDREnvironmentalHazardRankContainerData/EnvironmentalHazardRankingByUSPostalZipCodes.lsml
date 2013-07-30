@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="EnvironmentalHazardRankingByUSPostalZipCode">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="GeographyId"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="GeographyType"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GeographyName"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="State"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateFipsCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="EnviromentalHazardIndex"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EnviromentalHazardRank"
+        PropertyType=":Int16">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Latitude"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Longitude"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="EDREnvironmentalHazardRankContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="EnvironmentalHazardRankingByUSPostalZipCodes"
+      EntityType="EnvironmentalHazardRankingByUSPostalZipCode" />
+    <QueryOperation
+      Name="EnvironmentalHazardRankingByUSPostalZipCodes_Single"
+      ReturnType="EnvironmentalHazardRankingByUSPostalZipCode">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="GeographyId" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="GeographyId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EnvironmentalHazardRankingByUSPostalZipCodes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="GeographyId"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'GeographyId' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="EnvironmentalHazardRankingByUSPostalZipCodes_SingleOrDefault"
+      ReturnType="EnvironmentalHazardRankingByUSPostalZipCode">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="GeographyId" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="GeographyId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="EnvironmentalHazardRankingByUSPostalZipCodes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="GeographyId"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'GeographyId' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="EDREnvironmentalHazardRankContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="EnvironmentalHazardRankingByUSPostalZipCodes">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="EnvironmentalHazardRankingByUSPostalZipCode"
+          EntityTypeNamespace="EDR.EnvironmentalHazardRank"
+          Name="EnvironmentalHazardRankingByUSPostalZipCode"
+          EntityType="EnvironmentalHazardRankingByUSPostalZipCode" />
+        <CsdlProperty
+          Name="GeographyId"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[GeographyId]" />
+        <CsdlProperty
+          Name="GeographyType"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[GeographyType]" />
+        <CsdlProperty
+          Name="GeographyName"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[GeographyName]" />
+        <CsdlProperty
+          Name="State"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[State]" />
+        <CsdlProperty
+          Name="StateFipsCode"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[StateFipsCode]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="EnviromentalHazardIndex"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[EnviromentalHazardIndex]" />
+        <CsdlProperty
+          Name="EnviromentalHazardRank"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[EnviromentalHazardRank]" />
+        <CsdlProperty
+          Name="Latitude"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[Latitude]" />
+        <CsdlProperty
+          Name="Longitude"
+          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[Longitude]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

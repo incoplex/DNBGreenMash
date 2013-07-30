@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Minority">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Company"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="InternationalDialingCode"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IndustryCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CongressDistrict"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinoritySourceCodeName1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinoritySourceLevelCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityClassificationCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityCertificationCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityBusinessEnterpriseIndicator1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityCertificationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityCertificationExpirationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityCertificationNumber1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Minority1DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinoritySourceCodeName2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinoritySourceLevelCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityClassificationCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityCertificationCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityBusinessEnterpriseIndicator2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityCertificationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityCertificationExpirationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityCertificationNumber2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Minority2DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HistoricallyBlackCollegeorUniversityMinorityInstitutionIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="MinorityBusinessEnterpriseIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="AlaskanNativeCorporationIndicator"
+        PropertyType=":String?" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Minorities"
+      EntityType="Minority" />
+    <QueryOperation
+      Name="Minorities_Single"
+      ReturnType="Minority">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Minorities" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Minorities_SingleOrDefault"
+      ReturnType="Minority">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Minorities" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Minorities">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="Minority"
+          EntityTypeNamespace="DNB.DeveloperSandbox"
+          Name="Minority"
+          EntityType="Minority" />
+        <CsdlProperty
+          Name="DUNSNumber"
+          Property="Minority/Properties[DUNSNumber]" />
+        <CsdlProperty
+          Name="Company"
+          Property="Minority/Properties[Company]" />
+        <CsdlProperty
+          Name="Address"
+          Property="Minority/Properties[Address]" />
+        <CsdlProperty
+          Name="Address2"
+          Property="Minority/Properties[Address2]" />
+        <CsdlProperty
+          Name="City"
+          Property="Minority/Properties[City]" />
+        <CsdlProperty
+          Name="StateAbbrv"
+          Property="Minority/Properties[StateAbbrv]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="Minority/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="Country"
+          Property="Minority/Properties[Country]" />
+        <CsdlProperty
+          Name="Phone"
+          Property="Minority/Properties[Phone]" />
+        <CsdlProperty
+          Name="Fax"
+          Property="Minority/Properties[Fax]" />
+        <CsdlProperty
+          Name="InternationalDialingCode"
+          Property="Minority/Properties[InternationalDialingCode]" />
+        <CsdlProperty
+          Name="IndustryCode1"
+          Property="Minority/Properties[IndustryCode1]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc1"
+          Property="Minority/Properties[IndustryCodeDesc1]" />
+        <CsdlProperty
+          Name="CongressDistrict"
+          Property="Minority/Properties[CongressDistrict]" />
+        <CsdlProperty
+          Name="MinorityIndicator"
+          Property="Minority/Properties[MinorityIndicator]" />
+        <CsdlProperty
+          Name="MinoritySourceCodeName1"
+          Property="Minority/Properties[MinoritySourceCodeName1]" />
+        <CsdlProperty
+          Name="MinoritySourceLevelCode1"
+          Property="Minority/Properties[MinoritySourceLevelCode1]" />
+        <CsdlProperty
+          Name="MinorityClassificationCode1"
+          Property="Minority/Properties[MinorityClassificationCode1]" />
+        <CsdlProperty
+          Name="MinorityCertificationCode1"
+          Property="Minority/Properties[MinorityCertificationCode1]" />
+        <CsdlProperty
+          Name="MinorityBusinessEnterpriseIndicator1"
+          Property="Minority/Properties[MinorityBusinessEnterpriseIndicator1]" />
+        <CsdlProperty
+          Name="MinorityCertificationDate1"
+          Property="Minority/Properties[MinorityCertificationDate1]" />
+        <CsdlProperty
+          Name="MinorityCertificationExpirationDate1"
+          Property="Minority/Properties[MinorityCertificationExpirationDate1]" />
+        <CsdlProperty
+          Name="MinorityCertificationNumber1"
+          Property="Minority/Properties[MinorityCertificationNumber1]" />
+        <CsdlProperty
+          Name="Minority1DateReceivedbyDnB"
+          Property="Minority/Properties[Minority1DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="MinoritySourceCodeName2"
+          Property="Minority/Properties[MinoritySourceCodeName2]" />
+        <CsdlProperty
+          Name="MinoritySourceLevelCode2"
+          Property="Minority/Properties[MinoritySourceLevelCode2]" />
+        <CsdlProperty
+          Name="MinorityClassificationCode2"
+          Property="Minority/Properties[MinorityClassificationCode2]" />
+        <CsdlProperty
+          Name="MinorityCertificationCode2"
+          Property="Minority/Properties[MinorityCertificationCode2]" />
+        <CsdlProperty
+          Name="MinorityBusinessEnterpriseIndicator2"
+          Property="Minority/Properties[MinorityBusinessEnterpriseIndicator2]" />
+        <CsdlProperty
+          Name="MinorityCertificationDate2"
+          Property="Minority/Properties[MinorityCertificationDate2]" />
+        <CsdlProperty
+          Name="MinorityCertificationExpirationDate2"
+          Property="Minority/Properties[MinorityCertificationExpirationDate2]" />
+        <CsdlProperty
+          Name="MinorityCertificationNumber2"
+          Property="Minority/Properties[MinorityCertificationNumber2]" />
+        <CsdlProperty
+          Name="Minority2DateReceivedbyDnB"
+          Property="Minority/Properties[Minority2DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="HistoricallyBlackCollegeorUniversityMinorityInstitutionIndicator"
+          Property="Minority/Properties[HistoricallyBlackCollegeorUniversityMinorityInstitutionIndicator]" />
+        <CsdlProperty
+          Name="SmallBusinessIndicator"
+          Property="Minority/Properties[SmallBusinessIndicator]" />
+        <CsdlProperty
+          Name="MinorityBusinessEnterpriseIndicator"
+          Property="Minority/Properties[MinorityBusinessEnterpriseIndicator]" />
+        <CsdlProperty
+          Name="AlaskanNativeCorporationIndicator"
+          Property="Minority/Properties[AlaskanNativeCorporationIndicator]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

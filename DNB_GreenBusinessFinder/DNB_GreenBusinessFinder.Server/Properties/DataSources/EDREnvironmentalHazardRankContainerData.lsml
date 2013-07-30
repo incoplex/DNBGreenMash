@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityContainer
+    Name="EDREnvironmentalHazardRankContainerData">
+    <EntityContainer.Attributes>
+      <Partial
+        IsPrimary="True" />
+    </EntityContainer.Attributes>
+    <SubmitOperation
+      Name="SaveChanges" />
+  </EntityContainer>
+  <DataService
+    Name="EDREnvironmentalHazardRankContainerDataDataService"
+    DataProvider="AstoriaDataProvider"
+    EntityContainer="EDREnvironmentalHazardRankContainerData">
+    <DataService.Attributes>
+      <CsdlEntityContainer
+        Name="EDREnvironmentalHazardRankContainer"
+        Namespace="EDR.EnvironmentalHazardRank" />
+      <Partial
+        IsPrimary="True" />
+    </DataService.Attributes>
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="dc8b80fd-13f9-4aed-a101-8a2bc0dc9238" />
+      <ConnectionProperty
+        Name="ProjectMetadata"
+        Value="EdmxFile2" />
+    </DataService.ConnectionProperties>
+  </DataService>
+</ServiceApplication>

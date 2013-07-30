@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Disadvantaged">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Company"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="InternationalDialingCode"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IndustryCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CongressDistrict"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseSourceCodeName1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseSourceLevelCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseCertificationCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseCertificationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseCertificationExpirationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseCertificationNumber1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterprise1DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseSourceCodeName2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseSourceLevelCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseCertificationCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseCertificationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseCertificationExpirationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterpriseCertificationNumber2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisadvantagedBusinessEnterprise2DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallDisadvantagedBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallDisadvantagedBusinessSourceName"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallDisadvantagedBusinessSourceLevelCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallDisadvantagedBusinessCertificationCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallDisadvantagedBusinessEntryDate"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallDisadvantagedBusinessExitDate"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallDisadvantagedBusinessDateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedSourceCodeName1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedSourceLevelCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedCertificationCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedCertificationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedCertificationExpirationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedCertificationNumber1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwned1DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedSourceCodeName2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedSourceLevelCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedCertificationCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedCertificationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedCertificationExpirationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwnedCertificationNumber2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DisabledOwned2DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HubZoneCertificationIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="LaborSurplusAreaIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="AlaskanNativeCorporationIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessSourceCodeName1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessSourceLevelCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessCertificationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessCertificationExpirationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessCertificationNumber1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessSourceCodeName2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessSourceLevelCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessCertificationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessCertificationExpirationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CertifiedSmallBusinessCertificationNumber2"
+        PropertyType=":String?" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Disadvantageds"
+      EntityType="Disadvantaged" />
+    <QueryOperation
+      Name="Disadvantageds_Single"
+      ReturnType="Disadvantaged">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Disadvantageds" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Disadvantageds_SingleOrDefault"
+      ReturnType="Disadvantaged">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Disadvantageds" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Disadvantageds">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="Disadvantaged"
+          EntityTypeNamespace="DNB.DeveloperSandbox"
+          Name="Disadvantaged"
+          EntityType="Disadvantaged" />
+        <CsdlProperty
+          Name="DUNSNumber"
+          Property="Disadvantaged/Properties[DUNSNumber]" />
+        <CsdlProperty
+          Name="Company"
+          Property="Disadvantaged/Properties[Company]" />
+        <CsdlProperty
+          Name="Address"
+          Property="Disadvantaged/Properties[Address]" />
+        <CsdlProperty
+          Name="Address2"
+          Property="Disadvantaged/Properties[Address2]" />
+        <CsdlProperty
+          Name="City"
+          Property="Disadvantaged/Properties[City]" />
+        <CsdlProperty
+          Name="StateAbbrv"
+          Property="Disadvantaged/Properties[StateAbbrv]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="Disadvantaged/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="Country"
+          Property="Disadvantaged/Properties[Country]" />
+        <CsdlProperty
+          Name="Phone"
+          Property="Disadvantaged/Properties[Phone]" />
+        <CsdlProperty
+          Name="Fax"
+          Property="Disadvantaged/Properties[Fax]" />
+        <CsdlProperty
+          Name="InternationalDialingCode"
+          Property="Disadvantaged/Properties[InternationalDialingCode]" />
+        <CsdlProperty
+          Name="IndustryCode1"
+          Property="Disadvantaged/Properties[IndustryCode1]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc1"
+          Property="Disadvantaged/Properties[IndustryCodeDesc1]" />
+        <CsdlProperty
+          Name="CongressDistrict"
+          Property="Disadvantaged/Properties[CongressDistrict]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseIndicator"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseIndicator]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseSourceCodeName1"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseSourceCodeName1]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseSourceLevelCode1"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseSourceLevelCode1]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseCertificationCode1"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseCertificationCode1]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseCertificationDate1"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseCertificationDate1]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseCertificationExpirationDate1"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseCertificationExpirationDate1]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseCertificationNumber1"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseCertificationNumber1]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterprise1DateReceivedbyDnB"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterprise1DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseSourceCodeName2"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseSourceCodeName2]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseSourceLevelCode2"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseSourceLevelCode2]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseCertificationCode2"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseCertificationCode2]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseCertificationDate2"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseCertificationDate2]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseCertificationExpirationDate2"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseCertificationExpirationDate2]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterpriseCertificationNumber2"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterpriseCertificationNumber2]" />
+        <CsdlProperty
+          Name="DisadvantagedBusinessEnterprise2DateReceivedbyDnB"
+          Property="Disadvantaged/Properties[DisadvantagedBusinessEnterprise2DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="SmallDisadvantagedBusinessIndicator"
+          Property="Disadvantaged/Properties[SmallDisadvantagedBusinessIndicator]" />
+        <CsdlProperty
+          Name="SmallDisadvantagedBusinessSourceName"
+          Property="Disadvantaged/Properties[SmallDisadvantagedBusinessSourceName]" />
+        <CsdlProperty
+          Name="SmallDisadvantagedBusinessSourceLevelCode"
+          Property="Disadvantaged/Properties[SmallDisadvantagedBusinessSourceLevelCode]" />
+        <CsdlProperty
+          Name="SmallDisadvantagedBusinessCertificationCode"
+          Property="Disadvantaged/Properties[SmallDisadvantagedBusinessCertificationCode]" />
+        <CsdlProperty
+          Name="SmallDisadvantagedBusinessEntryDate"
+          Property="Disadvantaged/Properties[SmallDisadvantagedBusinessEntryDate]" />
+        <CsdlProperty
+          Name="SmallDisadvantagedBusinessExitDate"
+          Property="Disadvantaged/Properties[SmallDisadvantagedBusinessExitDate]" />
+        <CsdlProperty
+          Name="SmallDisadvantagedBusinessDateReceivedbyDnB"
+          Property="Disadvantaged/Properties[SmallDisadvantagedBusinessDateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="DisabledOwnedBusinessIndicator"
+          Property="Disadvantaged/Properties[DisabledOwnedBusinessIndicator]" />
+        <CsdlProperty
+          Name="DisabledOwnedSourceCodeName1"
+          Property="Disadvantaged/Properties[DisabledOwnedSourceCodeName1]" />
+        <CsdlProperty
+          Name="DisabledOwnedSourceLevelCode1"
+          Property="Disadvantaged/Properties[DisabledOwnedSourceLevelCode1]" />
+        <CsdlProperty
+          Name="DisabledOwnedCertificationCode1"
+          Property="Disadvantaged/Properties[DisabledOwnedCertificationCode1]" />
+        <CsdlProperty
+          Name="DisabledOwnedCertificationDate1"
+          Property="Disadvantaged/Properties[DisabledOwnedCertificationDate1]" />
+        <CsdlProperty
+          Name="DisabledOwnedCertificationExpirationDate1"
+          Property="Disadvantaged/Properties[DisabledOwnedCertificationExpirationDate1]" />
+        <CsdlProperty
+          Name="DisabledOwnedCertificationNumber1"
+          Property="Disadvantaged/Properties[DisabledOwnedCertificationNumber1]" />
+        <CsdlProperty
+          Name="DisabledOwned1DateReceivedbyDnB"
+          Property="Disadvantaged/Properties[DisabledOwned1DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="DisabledOwnedSourceCodeName2"
+          Property="Disadvantaged/Properties[DisabledOwnedSourceCodeName2]" />
+        <CsdlProperty
+          Name="DisabledOwnedSourceLevelCode2"
+          Property="Disadvantaged/Properties[DisabledOwnedSourceLevelCode2]" />
+        <CsdlProperty
+          Name="DisabledOwnedCertificationCode2"
+          Property="Disadvantaged/Properties[DisabledOwnedCertificationCode2]" />
+        <CsdlProperty
+          Name="DisabledOwnedCertificationDate2"
+          Property="Disadvantaged/Properties[DisabledOwnedCertificationDate2]" />
+        <CsdlProperty
+          Name="DisabledOwnedCertificationExpirationDate2"
+          Property="Disadvantaged/Properties[DisabledOwnedCertificationExpirationDate2]" />
+        <CsdlProperty
+          Name="DisabledOwnedCertificationNumber2"
+          Property="Disadvantaged/Properties[DisabledOwnedCertificationNumber2]" />
+        <CsdlProperty
+          Name="DisabledOwned2DateReceivedbyDnB"
+          Property="Disadvantaged/Properties[DisabledOwned2DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="HubZoneCertificationIndicator"
+          Property="Disadvantaged/Properties[HubZoneCertificationIndicator]" />
+        <CsdlProperty
+          Name="LaborSurplusAreaIndicator"
+          Property="Disadvantaged/Properties[LaborSurplusAreaIndicator]" />
+        <CsdlProperty
+          Name="SmallBusinessIndicator"
+          Property="Disadvantaged/Properties[SmallBusinessIndicator]" />
+        <CsdlProperty
+          Name="AlaskanNativeCorporationIndicator"
+          Property="Disadvantaged/Properties[AlaskanNativeCorporationIndicator]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessIndicator"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessIndicator]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessSourceCodeName1"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessSourceCodeName1]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessSourceLevelCode1"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessSourceLevelCode1]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessCertificationDate1"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessCertificationDate1]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessCertificationExpirationDate1"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessCertificationExpirationDate1]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessCertificationNumber1"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessCertificationNumber1]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessSourceCodeName2"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessSourceCodeName2]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessSourceLevelCode2"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessSourceLevelCode2]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessCertificationDate2"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessCertificationDate2]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessCertificationExpirationDate2"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessCertificationExpirationDate2]" />
+        <CsdlProperty
+          Name="CertifiedSmallBusinessCertificationNumber2"
+          Property="Disadvantaged/Properties[CertifiedSmallBusinessCertificationNumber2]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="FamilyHierarchy">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Company"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="InternationalDialingCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs5"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CEOName"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CEOTitle"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="LegalStatus"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SingleLocation"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="FederalTaxID"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="NationalTaxID"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="NationalTaxIDInd"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="LineOfBusiness"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ControlYear"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CompanyStartYear"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="AnnualSalesUSDollars"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="HQAnnualSalesUSDollars"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmployeesTotal"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmployeesTotalHere"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IndustryCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode5"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode6"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc5"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc6"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HQDUNS"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HQOrganizationName"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HQOrganizationAddress"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HQOrganizationAddress2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HQOrganizationCity"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HQOrganizationStateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HQOrganizationPostalCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="HQOrganizationCountry"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ParentDUNS"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ParentOrganizationName"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ParentOrganizationAddress"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ParentOrganizationAddress2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ParentOrganizationCity"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ParentOrganizationStateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ParentOrganizationPostalCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ParentOrganizationCountry"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DomesticUltimateDUNS"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DomesticUltimateOrganizationName"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DomesticUltimateOrganizationAddress"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DomesticUltimateOrganizationAddress2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DomesticUltimateOrganizationCity"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DomesticUltimateOrganizationStateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DomesticUltimateOrganizationPostalCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DomesticUltimateOrganizationCountry"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GlobalUltimateDUNS"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GlobalUltimateOrganizationName"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GlobalUltimateOrganizationAddress"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GlobalUltimateOrganizationAddress2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GlobalUltimateOrganizationCity"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GlobalUltimateOrganizationStateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GlobalUltimateOrganizationPostalCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GlobalUltimateOrganizationCountry"
+        PropertyType=":String?" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="FamilyHierarchies"
+      EntityType="FamilyHierarchy" />
+    <QueryOperation
+      Name="FamilyHierarchies_Single"
+      ReturnType="FamilyHierarchy">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FamilyHierarchies" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="FamilyHierarchies_SingleOrDefault"
+      ReturnType="FamilyHierarchy">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="FamilyHierarchies" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="FamilyHierarchies">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="FamilyHierarchy"
+          EntityTypeNamespace="DNB.DeveloperSandbox"
+          Name="FamilyHierarchy"
+          EntityType="FamilyHierarchy" />
+        <CsdlProperty
+          Name="DUNSNumber"
+          Property="FamilyHierarchy/Properties[DUNSNumber]" />
+        <CsdlProperty
+          Name="Company"
+          Property="FamilyHierarchy/Properties[Company]" />
+        <CsdlProperty
+          Name="Address"
+          Property="FamilyHierarchy/Properties[Address]" />
+        <CsdlProperty
+          Name="Address2"
+          Property="FamilyHierarchy/Properties[Address2]" />
+        <CsdlProperty
+          Name="City"
+          Property="FamilyHierarchy/Properties[City]" />
+        <CsdlProperty
+          Name="StateAbbrv"
+          Property="FamilyHierarchy/Properties[StateAbbrv]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="FamilyHierarchy/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="Country"
+          Property="FamilyHierarchy/Properties[Country]" />
+        <CsdlProperty
+          Name="Phone"
+          Property="FamilyHierarchy/Properties[Phone]" />
+        <CsdlProperty
+          Name="Fax"
+          Property="FamilyHierarchy/Properties[Fax]" />
+        <CsdlProperty
+          Name="InternationalDialingCode"
+          Property="FamilyHierarchy/Properties[InternationalDialingCode]" />
+        <CsdlProperty
+          Name="DoingBusinessAs1"
+          Property="FamilyHierarchy/Properties[DoingBusinessAs1]" />
+        <CsdlProperty
+          Name="DoingBusinessAs2"
+          Property="FamilyHierarchy/Properties[DoingBusinessAs2]" />
+        <CsdlProperty
+          Name="DoingBusinessAs3"
+          Property="FamilyHierarchy/Properties[DoingBusinessAs3]" />
+        <CsdlProperty
+          Name="DoingBusinessAs4"
+          Property="FamilyHierarchy/Properties[DoingBusinessAs4]" />
+        <CsdlProperty
+          Name="DoingBusinessAs5"
+          Property="FamilyHierarchy/Properties[DoingBusinessAs5]" />
+        <CsdlProperty
+          Name="CEOName"
+          Property="FamilyHierarchy/Properties[CEOName]" />
+        <CsdlProperty
+          Name="CEOTitle"
+          Property="FamilyHierarchy/Properties[CEOTitle]" />
+        <CsdlProperty
+          Name="LegalStatus"
+          Property="FamilyHierarchy/Properties[LegalStatus]" />
+        <CsdlProperty
+          Name="SingleLocation"
+          Property="FamilyHierarchy/Properties[SingleLocation]" />
+        <CsdlProperty
+          Name="FederalTaxID"
+          Property="FamilyHierarchy/Properties[FederalTaxID]" />
+        <CsdlProperty
+          Name="NationalTaxID"
+          Property="FamilyHierarchy/Properties[NationalTaxID]" />
+        <CsdlProperty
+          Name="NationalTaxIDInd"
+          Property="FamilyHierarchy/Properties[NationalTaxIDInd]" />
+        <CsdlProperty
+          Name="LineOfBusiness"
+          Property="FamilyHierarchy/Properties[LineOfBusiness]" />
+        <CsdlProperty
+          Name="ControlYear"
+          Property="FamilyHierarchy/Properties[ControlYear]" />
+        <CsdlProperty
+          Name="CompanyStartYear"
+          Property="FamilyHierarchy/Properties[CompanyStartYear]" />
+        <CsdlProperty
+          Name="AnnualSalesUSDollars"
+          Property="FamilyHierarchy/Properties[AnnualSalesUSDollars]" />
+        <CsdlProperty
+          Name="HQAnnualSalesUSDollars"
+          Property="FamilyHierarchy/Properties[HQAnnualSalesUSDollars]" />
+        <CsdlProperty
+          Name="EmployeesTotal"
+          Property="FamilyHierarchy/Properties[EmployeesTotal]" />
+        <CsdlProperty
+          Name="EmployeesTotalHere"
+          Property="FamilyHierarchy/Properties[EmployeesTotalHere]" />
+        <CsdlProperty
+          Name="IndustryCode1"
+          Property="FamilyHierarchy/Properties[IndustryCode1]" />
+        <CsdlProperty
+          Name="IndustryCode2"
+          Property="FamilyHierarchy/Properties[IndustryCode2]" />
+        <CsdlProperty
+          Name="IndustryCode3"
+          Property="FamilyHierarchy/Properties[IndustryCode3]" />
+        <CsdlProperty
+          Name="IndustryCode4"
+          Property="FamilyHierarchy/Properties[IndustryCode4]" />
+        <CsdlProperty
+          Name="IndustryCode5"
+          Property="FamilyHierarchy/Properties[IndustryCode5]" />
+        <CsdlProperty
+          Name="IndustryCode6"
+          Property="FamilyHierarchy/Properties[IndustryCode6]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc1"
+          Property="FamilyHierarchy/Properties[IndustryCodeDesc1]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc2"
+          Property="FamilyHierarchy/Properties[IndustryCodeDesc2]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc3"
+          Property="FamilyHierarchy/Properties[IndustryCodeDesc3]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc4"
+          Property="FamilyHierarchy/Properties[IndustryCodeDesc4]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc5"
+          Property="FamilyHierarchy/Properties[IndustryCodeDesc5]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc6"
+          Property="FamilyHierarchy/Properties[IndustryCodeDesc6]" />
+        <CsdlProperty
+          Name="HQDUNS"
+          Property="FamilyHierarchy/Properties[HQDUNS]" />
+        <CsdlProperty
+          Name="HQOrganizationName"
+          Property="FamilyHierarchy/Properties[HQOrganizationName]" />
+        <CsdlProperty
+          Name="HQOrganizationAddress"
+          Property="FamilyHierarchy/Properties[HQOrganizationAddress]" />
+        <CsdlProperty
+          Name="HQOrganizationAddress2"
+          Property="FamilyHierarchy/Properties[HQOrganizationAddress2]" />
+        <CsdlProperty
+          Name="HQOrganizationCity"
+          Property="FamilyHierarchy/Properties[HQOrganizationCity]" />
+        <CsdlProperty
+          Name="HQOrganizationStateAbbrv"
+          Property="FamilyHierarchy/Properties[HQOrganizationStateAbbrv]" />
+        <CsdlProperty
+          Name="HQOrganizationPostalCode"
+          Property="FamilyHierarchy/Properties[HQOrganizationPostalCode]" />
+        <CsdlProperty
+          Name="HQOrganizationCountry"
+          Property="FamilyHierarchy/Properties[HQOrganizationCountry]" />
+        <CsdlProperty
+          Name="ParentDUNS"
+          Property="FamilyHierarchy/Properties[ParentDUNS]" />
+        <CsdlProperty
+          Name="ParentOrganizationName"
+          Property="FamilyHierarchy/Properties[ParentOrganizationName]" />
+        <CsdlProperty
+          Name="ParentOrganizationAddress"
+          Property="FamilyHierarchy/Properties[ParentOrganizationAddress]" />
+        <CsdlProperty
+          Name="ParentOrganizationAddress2"
+          Property="FamilyHierarchy/Properties[ParentOrganizationAddress2]" />
+        <CsdlProperty
+          Name="ParentOrganizationCity"
+          Property="FamilyHierarchy/Properties[ParentOrganizationCity]" />
+        <CsdlProperty
+          Name="ParentOrganizationStateAbbrv"
+          Property="FamilyHierarchy/Properties[ParentOrganizationStateAbbrv]" />
+        <CsdlProperty
+          Name="ParentOrganizationPostalCode"
+          Property="FamilyHierarchy/Properties[ParentOrganizationPostalCode]" />
+        <CsdlProperty
+          Name="ParentOrganizationCountry"
+          Property="FamilyHierarchy/Properties[ParentOrganizationCountry]" />
+        <CsdlProperty
+          Name="DomesticUltimateDUNS"
+          Property="FamilyHierarchy/Properties[DomesticUltimateDUNS]" />
+        <CsdlProperty
+          Name="DomesticUltimateOrganizationName"
+          Property="FamilyHierarchy/Properties[DomesticUltimateOrganizationName]" />
+        <CsdlProperty
+          Name="DomesticUltimateOrganizationAddress"
+          Property="FamilyHierarchy/Properties[DomesticUltimateOrganizationAddress]" />
+        <CsdlProperty
+          Name="DomesticUltimateOrganizationAddress2"
+          Property="FamilyHierarchy/Properties[DomesticUltimateOrganizationAddress2]" />
+        <CsdlProperty
+          Name="DomesticUltimateOrganizationCity"
+          Property="FamilyHierarchy/Properties[DomesticUltimateOrganizationCity]" />
+        <CsdlProperty
+          Name="DomesticUltimateOrganizationStateAbbrv"
+          Property="FamilyHierarchy/Properties[DomesticUltimateOrganizationStateAbbrv]" />
+        <CsdlProperty
+          Name="DomesticUltimateOrganizationPostalCode"
+          Property="FamilyHierarchy/Properties[DomesticUltimateOrganizationPostalCode]" />
+        <CsdlProperty
+          Name="DomesticUltimateOrganizationCountry"
+          Property="FamilyHierarchy/Properties[DomesticUltimateOrganizationCountry]" />
+        <CsdlProperty
+          Name="GlobalUltimateDUNS"
+          Property="FamilyHierarchy/Properties[GlobalUltimateDUNS]" />
+        <CsdlProperty
+          Name="GlobalUltimateOrganizationName"
+          Property="FamilyHierarchy/Properties[GlobalUltimateOrganizationName]" />
+        <CsdlProperty
+          Name="GlobalUltimateOrganizationAddress"
+          Property="FamilyHierarchy/Properties[GlobalUltimateOrganizationAddress]" />
+        <CsdlProperty
+          Name="GlobalUltimateOrganizationAddress2"
+          Property="FamilyHierarchy/Properties[GlobalUltimateOrganizationAddress2]" />
+        <CsdlProperty
+          Name="GlobalUltimateOrganizationCity"
+          Property="FamilyHierarchy/Properties[GlobalUltimateOrganizationCity]" />
+        <CsdlProperty
+          Name="GlobalUltimateOrganizationStateAbbrv"
+          Property="FamilyHierarchy/Properties[GlobalUltimateOrganizationStateAbbrv]" />
+        <CsdlProperty
+          Name="GlobalUltimateOrganizationPostalCode"
+          Property="FamilyHierarchy/Properties[GlobalUltimateOrganizationPostalCode]" />
+        <CsdlProperty
+          Name="GlobalUltimateOrganizationCountry"
+          Property="FamilyHierarchy/Properties[GlobalUltimateOrganizationCountry]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

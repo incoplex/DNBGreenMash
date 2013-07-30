@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20617.1 PREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8D9C8A9D-5DED-4B64-BF65-B598BA549D93}") = "DNB_GreenBusinessFinder", "DNB_GreenBusinessFinder\DNB_GreenBusinessFinder.lsxproj", "{51F0DB4A-548A-4C31-A086-CBF434EF9FE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNB_GreenBusinessFinder.Server", "DNB_GreenBusinessFinder\DNB_GreenBusinessFinder.Server\DNB_GreenBusinessFinder.Server.csproj", "{E4AD2DAC-E520-4C93-8696-D0957629460A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C8D1AC1C-7C19-462B-8938-5EBDD470574D} = {C8D1AC1C-7C19-462B-8938-5EBDD470574D}
+	EndProjectSection
+EndProject
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "DNB_GreenBusinessFinder.HTMLClient", "DNB_GreenBusinessFinder\DNB_GreenBusinessFinder.HTMLClient\DNB_GreenBusinessFinder.HTMLClient.jsproj", "{C8D1AC1C-7C19-462B-8938-5EBDD470574D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{699118C5-53B2-4335-A44E-84977CCCD558}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51F0DB4A-548A-4C31-A086-CBF434EF9FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F0DB4A-548A-4C31-A086-CBF434EF9FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F0DB4A-548A-4C31-A086-CBF434EF9FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F0DB4A-548A-4C31-A086-CBF434EF9FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4AD2DAC-E520-4C93-8696-D0957629460A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4AD2DAC-E520-4C93-8696-D0957629460A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4AD2DAC-E520-4C93-8696-D0957629460A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4AD2DAC-E520-4C93-8696-D0957629460A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D1AC1C-7C19-462B-8938-5EBDD470574D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D1AC1C-7C19-462B-8938-5EBDD470574D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D1AC1C-7C19-462B-8938-5EBDD470574D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D1AC1C-7C19-462B-8938-5EBDD470574D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

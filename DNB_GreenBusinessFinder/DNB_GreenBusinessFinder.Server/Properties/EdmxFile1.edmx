@@ -1,0 +1,450 @@
+﻿
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:dr="http://schemas.microsoft.com/dallas/2010/04">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="DNB.DeveloperSandbox" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="LocationLatLong">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.Int32" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Latitude" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Longitude" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="AccuracyCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="Firmographics">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs5" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CEOName" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CEOTitle" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="LegalStatus" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SingleLocation" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="FederalTaxID" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="NationalTaxID" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="NationalTaxIDInd" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="LineOfBusiness" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ControlYear" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CompanyStartYear" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="AnnualSalesUSDollars" Type="Edm.Double" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="EmployeesTotal" Type="Edm.Double" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="EmployeesTotalHere" Type="Edm.Double" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode5" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode6" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc5" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc6" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="FamilyHierarchy">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DoingBusinessAs5" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CEOName" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CEOTitle" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="LegalStatus" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SingleLocation" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="FederalTaxID" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="NationalTaxID" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="NationalTaxIDInd" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="LineOfBusiness" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ControlYear" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CompanyStartYear" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="AnnualSalesUSDollars" Type="Edm.Double" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HQAnnualSalesUSDollars" Type="Edm.Double" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="EmployeesTotal" Type="Edm.Double" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="EmployeesTotalHere" Type="Edm.Double" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode5" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode6" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc5" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc6" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HQDUNS" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="HQOrganizationName" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HQOrganizationAddress" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HQOrganizationAddress2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HQOrganizationCity" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HQOrganizationStateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HQOrganizationPostalCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HQOrganizationCountry" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ParentDUNS" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ParentOrganizationName" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ParentOrganizationAddress" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ParentOrganizationAddress2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ParentOrganizationCity" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ParentOrganizationStateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ParentOrganizationPostalCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ParentOrganizationCountry" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DomesticUltimateDUNS" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="DomesticUltimateOrganizationName" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DomesticUltimateOrganizationAddress" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DomesticUltimateOrganizationAddress2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DomesticUltimateOrganizationCity" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DomesticUltimateOrganizationStateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DomesticUltimateOrganizationPostalCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DomesticUltimateOrganizationCountry" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GlobalUltimateDUNS" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="GlobalUltimateOrganizationName" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GlobalUltimateOrganizationAddress" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GlobalUltimateOrganizationAddress2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GlobalUltimateOrganizationCity" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GlobalUltimateOrganizationStateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GlobalUltimateOrganizationPostalCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GlobalUltimateOrganizationCountry" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="Demographics">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="PublicRecords">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.Int32" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CongressDistrict" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="OutOfBusinessInd" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Debarrment" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="NetWorth" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Bankruptcyindicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="BankruptcyDate" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="NumberofSuits" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="NumberofLiens" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="NumberofJudgments" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="SuitsLiensJudgmentsIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="Green">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.Int32" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CongressDistrict" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="AlaskanNativeCorporationIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenSourceCodeName1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenSourceLevelCode1" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="GreenCertificationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenCertificationExpirationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenCertificationNumber1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenSourceCodeName2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenSourceLevelCode2" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="GreenCertificationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenCertificationExpirationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenCertificationNumber2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenSourceCodeName3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenSourceLevelCode3" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="GreenCertificationDate3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenCertificationExpirationDate3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenCertificationNumber3" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenSourceCodeName4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenSourceLevelCode4" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="GreenCertificationDate4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenCertificationExpirationDate4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="GreenCertificationNumber4" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="Minority">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.Int32" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CongressDistrict" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinorityIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinoritySourceCodeName1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinoritySourceLevelCode1" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="MinorityClassificationCode1" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="MinorityCertificationCode1" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="MinorityBusinessEnterpriseIndicator1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinorityCertificationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinorityCertificationExpirationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinorityCertificationNumber1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Minority1DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinoritySourceCodeName2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinoritySourceLevelCode2" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="MinorityClassificationCode2" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="MinorityCertificationCode2" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="MinorityBusinessEnterpriseIndicator2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinorityCertificationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinorityCertificationExpirationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinorityCertificationNumber2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Minority2DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HistoricallyBlackCollegeorUniversityMinorityInstitutionIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="MinorityBusinessEnterpriseIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="AlaskanNativeCorporationIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="Women">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.Int32" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CongressDistrict" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedSourceCodeName1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedSourceLevelCode1" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="WomanOwnedCertificationCode1" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="WomanOwnedBusinessEnterpriseIndicator1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedCertificationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedCertificationExpirationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedCertificationNumber1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwned1DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedSourceCodeName2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedSourceLevelCode2" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="WomanOwnedCertificationCode2" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="WomanOwnedBusinessEnterpriseIndicator2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedCertificationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedCertificationExpirationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedCertificationNumber2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwned2DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="WomanOwnedBusinessEnterpriseIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="AlaskanNativeCorporationIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="Veteran">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.Int32" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CongressDistrict" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranOwnedIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranSourceCodeName1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranSourceLevelCode1" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="VeteranCertificationCode1" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="VietnamVeteranOwnedIndicator1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ServiceDisabledVeteranOwnedIndicator1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranBusinessEnterpriseIndicator1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedVeteranEnterpriseIndicator1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledVeteranBusinessEnterpriseIndicator1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranCertificationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranCertificationExpirationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranCertificationNumber1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Veteran1DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranSourceCodeName2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranSourceLevelCode2" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="VeteranCertificationCode2" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="VietnamVeteranOwnedIndicator2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="ServiceDisabledVeteranOwnedIndicator2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranBusinessEnterpriseIndicator2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedVeteranEnterpriseIndicator2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledVeteranBusinessEnterpriseIndicator2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranCertificationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranCertificationExpirationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VeteranCertificationNumber2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Veteran2DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="VietnamVeteranOwnedIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ServiceDisabledVeteranOwnedIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="VeteranBusinessEnterpriseIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="DisadvantagedVeteranEnterpriseIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="DisabledVeteranBusinessEnterpriseIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="AlaskanNativeCorporationIndicator" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityType Name="Disadvantaged">
+        <Key>
+          <PropertyRef Name="DUNSNumber" />
+        </Key>
+        <Property Name="DUNSNumber" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Company" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Address2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="City" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateAbbrv" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Country" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Phone" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="Fax" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="InternationalDialingCode" Type="Edm.Int32" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="IndustryCodeDesc1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CongressDistrict" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseSourceCodeName1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseSourceLevelCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseCertificationCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseCertificationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseCertificationExpirationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseCertificationNumber1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterprise1DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseSourceCodeName2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseSourceLevelCode2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseCertificationCode2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseCertificationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseCertificationExpirationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterpriseCertificationNumber2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisadvantagedBusinessEnterprise2DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallDisadvantagedBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="SmallDisadvantagedBusinessSourceName" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallDisadvantagedBusinessSourceLevelCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallDisadvantagedBusinessCertificationCode" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallDisadvantagedBusinessEntryDate" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallDisadvantagedBusinessExitDate" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="SmallDisadvantagedBusinessDateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="DisabledOwnedSourceCodeName1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedSourceLevelCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedCertificationCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedCertificationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedCertificationExpirationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedCertificationNumber1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwned1DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedSourceCodeName2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedSourceLevelCode2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedCertificationCode2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedCertificationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedCertificationExpirationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwnedCertificationNumber2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="DisabledOwned2DateReceivedbyDnB" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="HubZoneCertificationIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="LaborSurplusAreaIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="SmallBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="AlaskanNativeCorporationIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessIndicator" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessSourceCodeName1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessSourceLevelCode1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessCertificationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessCertificationExpirationDate1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessCertificationNumber1" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessSourceCodeName2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessSourceLevelCode2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessCertificationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessCertificationExpirationDate2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+        <Property Name="CertifiedSmallBusinessCertificationNumber2" Type="Edm.String" Nullable="true" dr:Queryable="false" dr:Returned="true" />
+      </EntityType>
+      <EntityContainer Name="DNBDeveloperSandboxContainer" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="LocationLatLong" EntityType="DNB.DeveloperSandbox.LocationLatLong" />
+        <EntitySet Name="Firmographics" EntityType="DNB.DeveloperSandbox.Firmographics" />
+        <EntitySet Name="FamilyHierarchy" EntityType="DNB.DeveloperSandbox.FamilyHierarchy" />
+        <EntitySet Name="Demographics" EntityType="DNB.DeveloperSandbox.Demographics" />
+        <EntitySet Name="PublicRecords" EntityType="DNB.DeveloperSandbox.PublicRecords" />
+        <EntitySet Name="Green" EntityType="DNB.DeveloperSandbox.Green" />
+        <EntitySet Name="Minority" EntityType="DNB.DeveloperSandbox.Minority" />
+        <EntitySet Name="Women" EntityType="DNB.DeveloperSandbox.Women" />
+        <EntitySet Name="Veteran" EntityType="DNB.DeveloperSandbox.Veteran" />
+        <EntitySet Name="Disadvantaged" EntityType="DNB.DeveloperSandbox.Disadvantaged" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

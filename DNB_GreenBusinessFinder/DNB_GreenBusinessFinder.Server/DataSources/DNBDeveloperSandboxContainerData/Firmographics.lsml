@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Firmographic">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Company"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="InternationalDialingCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="DoingBusinessAs5"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CEOName"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CEOTitle"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="LegalStatus"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SingleLocation"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="FederalTaxID"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="NationalTaxID"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="NationalTaxIDInd"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="LineOfBusiness"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ControlYear"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CompanyStartYear"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="AnnualSalesUSDollars"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmployeesTotal"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EmployeesTotalHere"
+        PropertyType=":Double?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IndustryCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode5"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCode6"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc5"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc6"
+        PropertyType=":String?" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Firmographics"
+      EntityType="Firmographic" />
+    <QueryOperation
+      Name="Firmographics_Single"
+      ReturnType="Firmographic">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Firmographics" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Firmographics_SingleOrDefault"
+      ReturnType="Firmographic">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Firmographics" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Firmographics">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="Firmographics"
+          EntityTypeNamespace="DNB.DeveloperSandbox"
+          Name="Firmographics"
+          EntityType="Firmographic" />
+        <CsdlProperty
+          Name="DUNSNumber"
+          Property="Firmographic/Properties[DUNSNumber]" />
+        <CsdlProperty
+          Name="Company"
+          Property="Firmographic/Properties[Company]" />
+        <CsdlProperty
+          Name="Address"
+          Property="Firmographic/Properties[Address]" />
+        <CsdlProperty
+          Name="Address2"
+          Property="Firmographic/Properties[Address2]" />
+        <CsdlProperty
+          Name="City"
+          Property="Firmographic/Properties[City]" />
+        <CsdlProperty
+          Name="StateAbbrv"
+          Property="Firmographic/Properties[StateAbbrv]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="Firmographic/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="Country"
+          Property="Firmographic/Properties[Country]" />
+        <CsdlProperty
+          Name="Phone"
+          Property="Firmographic/Properties[Phone]" />
+        <CsdlProperty
+          Name="Fax"
+          Property="Firmographic/Properties[Fax]" />
+        <CsdlProperty
+          Name="InternationalDialingCode"
+          Property="Firmographic/Properties[InternationalDialingCode]" />
+        <CsdlProperty
+          Name="DoingBusinessAs1"
+          Property="Firmographic/Properties[DoingBusinessAs1]" />
+        <CsdlProperty
+          Name="DoingBusinessAs2"
+          Property="Firmographic/Properties[DoingBusinessAs2]" />
+        <CsdlProperty
+          Name="DoingBusinessAs3"
+          Property="Firmographic/Properties[DoingBusinessAs3]" />
+        <CsdlProperty
+          Name="DoingBusinessAs4"
+          Property="Firmographic/Properties[DoingBusinessAs4]" />
+        <CsdlProperty
+          Name="DoingBusinessAs5"
+          Property="Firmographic/Properties[DoingBusinessAs5]" />
+        <CsdlProperty
+          Name="CEOName"
+          Property="Firmographic/Properties[CEOName]" />
+        <CsdlProperty
+          Name="CEOTitle"
+          Property="Firmographic/Properties[CEOTitle]" />
+        <CsdlProperty
+          Name="LegalStatus"
+          Property="Firmographic/Properties[LegalStatus]" />
+        <CsdlProperty
+          Name="SingleLocation"
+          Property="Firmographic/Properties[SingleLocation]" />
+        <CsdlProperty
+          Name="FederalTaxID"
+          Property="Firmographic/Properties[FederalTaxID]" />
+        <CsdlProperty
+          Name="NationalTaxID"
+          Property="Firmographic/Properties[NationalTaxID]" />
+        <CsdlProperty
+          Name="NationalTaxIDInd"
+          Property="Firmographic/Properties[NationalTaxIDInd]" />
+        <CsdlProperty
+          Name="LineOfBusiness"
+          Property="Firmographic/Properties[LineOfBusiness]" />
+        <CsdlProperty
+          Name="ControlYear"
+          Property="Firmographic/Properties[ControlYear]" />
+        <CsdlProperty
+          Name="CompanyStartYear"
+          Property="Firmographic/Properties[CompanyStartYear]" />
+        <CsdlProperty
+          Name="AnnualSalesUSDollars"
+          Property="Firmographic/Properties[AnnualSalesUSDollars]" />
+        <CsdlProperty
+          Name="EmployeesTotal"
+          Property="Firmographic/Properties[EmployeesTotal]" />
+        <CsdlProperty
+          Name="EmployeesTotalHere"
+          Property="Firmographic/Properties[EmployeesTotalHere]" />
+        <CsdlProperty
+          Name="IndustryCode1"
+          Property="Firmographic/Properties[IndustryCode1]" />
+        <CsdlProperty
+          Name="IndustryCode2"
+          Property="Firmographic/Properties[IndustryCode2]" />
+        <CsdlProperty
+          Name="IndustryCode3"
+          Property="Firmographic/Properties[IndustryCode3]" />
+        <CsdlProperty
+          Name="IndustryCode4"
+          Property="Firmographic/Properties[IndustryCode4]" />
+        <CsdlProperty
+          Name="IndustryCode5"
+          Property="Firmographic/Properties[IndustryCode5]" />
+        <CsdlProperty
+          Name="IndustryCode6"
+          Property="Firmographic/Properties[IndustryCode6]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc1"
+          Property="Firmographic/Properties[IndustryCodeDesc1]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc2"
+          Property="Firmographic/Properties[IndustryCodeDesc2]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc3"
+          Property="Firmographic/Properties[IndustryCodeDesc3]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc4"
+          Property="Firmographic/Properties[IndustryCodeDesc4]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc5"
+          Property="Firmographic/Properties[IndustryCodeDesc5]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc6"
+          Property="Firmographic/Properties[IndustryCodeDesc6]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

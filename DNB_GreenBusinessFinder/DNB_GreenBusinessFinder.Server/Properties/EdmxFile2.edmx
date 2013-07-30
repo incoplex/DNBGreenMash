@@ -1,0 +1,25 @@
+﻿
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:dr="http://schemas.microsoft.com/dallas/2010/04">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+    <Schema Namespace="EDR.EnvironmentalHazardRank" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2007/05/edm">
+      <EntityType Name="EnvironmentalHazardRankingByUSPostalZipCode">
+        <Key>
+          <PropertyRef Name="GeographyId" />
+        </Key>
+        <Property Name="GeographyId" Type="Edm.String" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="GeographyType" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="GeographyName" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="State" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="StateFipsCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="ZipCode" Type="Edm.String" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="EnviromentalHazardIndex" Type="Edm.Decimal" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="EnviromentalHazardRank" Type="Edm.Int16" Nullable="false" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Latitude" Type="Edm.Decimal" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+        <Property Name="Longitude" Type="Edm.Decimal" Nullable="true" dr:Queryable="true" dr:Returned="true" />
+      </EntityType>
+      <EntityContainer Name="EDREnvironmentalHazardRankContainer" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="EnvironmentalHazardRankingByUSPostalZipCode" EntityType="EDR.EnvironmentalHazardRank.EnvironmentalHazardRankingByUSPostalZipCode" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

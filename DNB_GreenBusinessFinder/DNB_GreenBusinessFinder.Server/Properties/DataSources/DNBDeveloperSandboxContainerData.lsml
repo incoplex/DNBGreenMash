@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial
+        IsPrimary="True" />
+    </EntityContainer.Attributes>
+    <SubmitOperation
+      Name="SaveChanges" />
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService"
+    DataProvider="AstoriaDataProvider"
+    EntityContainer="DNBDeveloperSandboxContainerData">
+    <DataService.Attributes>
+      <CsdlEntityContainer
+        Name="DNBDeveloperSandboxContainer"
+        Namespace="DNB.DeveloperSandbox" />
+      <Partial
+        IsPrimary="True" />
+    </DataService.Attributes>
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="0ef66677-8cb8-4b3a-8bf4-0bd4f76da97e" />
+      <ConnectionProperty
+        Name="ProjectMetadata"
+        Value="EdmxFile1" />
+    </DataService.ConnectionProperties>
+  </DataService>
+</ServiceApplication>

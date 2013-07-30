@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Green">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Company"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="InternationalDialingCode"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IndustryCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CongressDistrict"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="AlaskanNativeCorporationIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenSourceCodeName1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenSourceLevelCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationExpirationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationNumber1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenSourceCodeName2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenSourceLevelCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationExpirationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationNumber2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenSourceCodeName3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenSourceLevelCode3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationDate3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationExpirationDate3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationNumber3"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenSourceCodeName4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenSourceLevelCode4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationDate4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationExpirationDate4"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="GreenCertificationNumber4"
+        PropertyType=":String?" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Greens"
+      EntityType="Green" />
+    <QueryOperation
+      Name="Greens_Single"
+      ReturnType="Green">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Greens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Greens_SingleOrDefault"
+      ReturnType="Green">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Greens" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Greens">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="Green"
+          EntityTypeNamespace="DNB.DeveloperSandbox"
+          Name="Green"
+          EntityType="Green" />
+        <CsdlProperty
+          Name="DUNSNumber"
+          Property="Green/Properties[DUNSNumber]" />
+        <CsdlProperty
+          Name="Company"
+          Property="Green/Properties[Company]" />
+        <CsdlProperty
+          Name="Address"
+          Property="Green/Properties[Address]" />
+        <CsdlProperty
+          Name="Address2"
+          Property="Green/Properties[Address2]" />
+        <CsdlProperty
+          Name="City"
+          Property="Green/Properties[City]" />
+        <CsdlProperty
+          Name="StateAbbrv"
+          Property="Green/Properties[StateAbbrv]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="Green/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="Country"
+          Property="Green/Properties[Country]" />
+        <CsdlProperty
+          Name="Phone"
+          Property="Green/Properties[Phone]" />
+        <CsdlProperty
+          Name="Fax"
+          Property="Green/Properties[Fax]" />
+        <CsdlProperty
+          Name="InternationalDialingCode"
+          Property="Green/Properties[InternationalDialingCode]" />
+        <CsdlProperty
+          Name="IndustryCode1"
+          Property="Green/Properties[IndustryCode1]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc1"
+          Property="Green/Properties[IndustryCodeDesc1]" />
+        <CsdlProperty
+          Name="CongressDistrict"
+          Property="Green/Properties[CongressDistrict]" />
+        <CsdlProperty
+          Name="SmallBusinessIndicator"
+          Property="Green/Properties[SmallBusinessIndicator]" />
+        <CsdlProperty
+          Name="AlaskanNativeCorporationIndicator"
+          Property="Green/Properties[AlaskanNativeCorporationIndicator]" />
+        <CsdlProperty
+          Name="GreenBusinessIndicator"
+          Property="Green/Properties[GreenBusinessIndicator]" />
+        <CsdlProperty
+          Name="GreenSourceCodeName1"
+          Property="Green/Properties[GreenSourceCodeName1]" />
+        <CsdlProperty
+          Name="GreenSourceLevelCode1"
+          Property="Green/Properties[GreenSourceLevelCode1]" />
+        <CsdlProperty
+          Name="GreenCertificationDate1"
+          Property="Green/Properties[GreenCertificationDate1]" />
+        <CsdlProperty
+          Name="GreenCertificationExpirationDate1"
+          Property="Green/Properties[GreenCertificationExpirationDate1]" />
+        <CsdlProperty
+          Name="GreenCertificationNumber1"
+          Property="Green/Properties[GreenCertificationNumber1]" />
+        <CsdlProperty
+          Name="GreenSourceCodeName2"
+          Property="Green/Properties[GreenSourceCodeName2]" />
+        <CsdlProperty
+          Name="GreenSourceLevelCode2"
+          Property="Green/Properties[GreenSourceLevelCode2]" />
+        <CsdlProperty
+          Name="GreenCertificationDate2"
+          Property="Green/Properties[GreenCertificationDate2]" />
+        <CsdlProperty
+          Name="GreenCertificationExpirationDate2"
+          Property="Green/Properties[GreenCertificationExpirationDate2]" />
+        <CsdlProperty
+          Name="GreenCertificationNumber2"
+          Property="Green/Properties[GreenCertificationNumber2]" />
+        <CsdlProperty
+          Name="GreenSourceCodeName3"
+          Property="Green/Properties[GreenSourceCodeName3]" />
+        <CsdlProperty
+          Name="GreenSourceLevelCode3"
+          Property="Green/Properties[GreenSourceLevelCode3]" />
+        <CsdlProperty
+          Name="GreenCertificationDate3"
+          Property="Green/Properties[GreenCertificationDate3]" />
+        <CsdlProperty
+          Name="GreenCertificationExpirationDate3"
+          Property="Green/Properties[GreenCertificationExpirationDate3]" />
+        <CsdlProperty
+          Name="GreenCertificationNumber3"
+          Property="Green/Properties[GreenCertificationNumber3]" />
+        <CsdlProperty
+          Name="GreenSourceCodeName4"
+          Property="Green/Properties[GreenSourceCodeName4]" />
+        <CsdlProperty
+          Name="GreenSourceLevelCode4"
+          Property="Green/Properties[GreenSourceLevelCode4]" />
+        <CsdlProperty
+          Name="GreenCertificationDate4"
+          Property="Green/Properties[GreenCertificationDate4]" />
+        <CsdlProperty
+          Name="GreenCertificationExpirationDate4"
+          Property="Green/Properties[GreenCertificationExpirationDate4]" />
+        <CsdlProperty
+          Name="GreenCertificationNumber4"
+          Property="Green/Properties[GreenCertificationNumber4]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="PublicRecord">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Company"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="InternationalDialingCode"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CongressDistrict"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="OutOfBusinessInd"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Debarrment"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="NetWorth"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Bankruptcyindicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="BankruptcyDate"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="NumberofSuits"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="NumberofLiens"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="NumberofJudgments"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SuitsLiensJudgmentsIndicator"
+        PropertyType=":String?" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="PublicRecords"
+      EntityType="PublicRecord" />
+    <QueryOperation
+      Name="PublicRecords_Single"
+      ReturnType="PublicRecord">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="PublicRecords" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="PublicRecords_SingleOrDefault"
+      ReturnType="PublicRecord">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="PublicRecords" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="PublicRecords">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="PublicRecords"
+          EntityTypeNamespace="DNB.DeveloperSandbox"
+          Name="PublicRecords"
+          EntityType="PublicRecord" />
+        <CsdlProperty
+          Name="DUNSNumber"
+          Property="PublicRecord/Properties[DUNSNumber]" />
+        <CsdlProperty
+          Name="Company"
+          Property="PublicRecord/Properties[Company]" />
+        <CsdlProperty
+          Name="Address"
+          Property="PublicRecord/Properties[Address]" />
+        <CsdlProperty
+          Name="Address2"
+          Property="PublicRecord/Properties[Address2]" />
+        <CsdlProperty
+          Name="City"
+          Property="PublicRecord/Properties[City]" />
+        <CsdlProperty
+          Name="StateAbbrv"
+          Property="PublicRecord/Properties[StateAbbrv]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="PublicRecord/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="Country"
+          Property="PublicRecord/Properties[Country]" />
+        <CsdlProperty
+          Name="Phone"
+          Property="PublicRecord/Properties[Phone]" />
+        <CsdlProperty
+          Name="Fax"
+          Property="PublicRecord/Properties[Fax]" />
+        <CsdlProperty
+          Name="InternationalDialingCode"
+          Property="PublicRecord/Properties[InternationalDialingCode]" />
+        <CsdlProperty
+          Name="CongressDistrict"
+          Property="PublicRecord/Properties[CongressDistrict]" />
+        <CsdlProperty
+          Name="OutOfBusinessInd"
+          Property="PublicRecord/Properties[OutOfBusinessInd]" />
+        <CsdlProperty
+          Name="Debarrment"
+          Property="PublicRecord/Properties[Debarrment]" />
+        <CsdlProperty
+          Name="NetWorth"
+          Property="PublicRecord/Properties[NetWorth]" />
+        <CsdlProperty
+          Name="Bankruptcyindicator"
+          Property="PublicRecord/Properties[Bankruptcyindicator]" />
+        <CsdlProperty
+          Name="BankruptcyDate"
+          Property="PublicRecord/Properties[BankruptcyDate]" />
+        <CsdlProperty
+          Name="NumberofSuits"
+          Property="PublicRecord/Properties[NumberofSuits]" />
+        <CsdlProperty
+          Name="NumberofLiens"
+          Property="PublicRecord/Properties[NumberofLiens]" />
+        <CsdlProperty
+          Name="NumberofJudgments"
+          Property="PublicRecord/Properties[NumberofJudgments]" />
+        <CsdlProperty
+          Name="SuitsLiensJudgmentsIndicator"
+          Property="PublicRecord/Properties[SuitsLiensJudgmentsIndicator]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

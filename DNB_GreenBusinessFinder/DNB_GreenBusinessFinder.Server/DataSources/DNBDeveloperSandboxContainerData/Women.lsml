@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Woman">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="DUNSNumber"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Company"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Address2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="City"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="StateAbbrv"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="ZipCode"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Country"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="Fax"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="InternationalDialingCode"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="IndustryCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="IndustryCodeDesc1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="CongressDistrict"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedSourceCodeName1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedSourceLevelCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedCertificationCode1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedBusinessEnterpriseIndicator1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedCertificationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedCertificationExpirationDate1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedCertificationNumber1"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwned1DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedSourceCodeName2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedSourceLevelCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedCertificationCode2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedBusinessEnterpriseIndicator2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedCertificationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedCertificationExpirationDate2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedCertificationNumber2"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwned2DateReceivedbyDnB"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="SmallBusinessIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="WomanOwnedBusinessEnterpriseIndicator"
+        PropertyType=":String?" />
+      <EntityProperty
+        Name="AlaskanNativeCorporationIndicator"
+        PropertyType=":String?" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="DNBDeveloperSandboxContainerData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Women"
+      EntityType="Woman" />
+    <QueryOperation
+      Name="Women_Single"
+      ReturnType="Woman">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Women" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Women_SingleOrDefault"
+      ReturnType="Woman">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="DUNSNumber" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="DUNSNumber" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Women" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="DUNSNumber"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'DUNSNumber' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DNBDeveloperSandboxContainerDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Women">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="Women"
+          EntityTypeNamespace="DNB.DeveloperSandbox"
+          Name="Women"
+          EntityType="Woman" />
+        <CsdlProperty
+          Name="DUNSNumber"
+          Property="Woman/Properties[DUNSNumber]" />
+        <CsdlProperty
+          Name="Company"
+          Property="Woman/Properties[Company]" />
+        <CsdlProperty
+          Name="Address"
+          Property="Woman/Properties[Address]" />
+        <CsdlProperty
+          Name="Address2"
+          Property="Woman/Properties[Address2]" />
+        <CsdlProperty
+          Name="City"
+          Property="Woman/Properties[City]" />
+        <CsdlProperty
+          Name="StateAbbrv"
+          Property="Woman/Properties[StateAbbrv]" />
+        <CsdlProperty
+          Name="ZipCode"
+          Property="Woman/Properties[ZipCode]" />
+        <CsdlProperty
+          Name="Country"
+          Property="Woman/Properties[Country]" />
+        <CsdlProperty
+          Name="Phone"
+          Property="Woman/Properties[Phone]" />
+        <CsdlProperty
+          Name="Fax"
+          Property="Woman/Properties[Fax]" />
+        <CsdlProperty
+          Name="InternationalDialingCode"
+          Property="Woman/Properties[InternationalDialingCode]" />
+        <CsdlProperty
+          Name="IndustryCode1"
+          Property="Woman/Properties[IndustryCode1]" />
+        <CsdlProperty
+          Name="IndustryCodeDesc1"
+          Property="Woman/Properties[IndustryCodeDesc1]" />
+        <CsdlProperty
+          Name="CongressDistrict"
+          Property="Woman/Properties[CongressDistrict]" />
+        <CsdlProperty
+          Name="WomanOwnedIndicator"
+          Property="Woman/Properties[WomanOwnedIndicator]" />
+        <CsdlProperty
+          Name="WomanOwnedSourceCodeName1"
+          Property="Woman/Properties[WomanOwnedSourceCodeName1]" />
+        <CsdlProperty
+          Name="WomanOwnedSourceLevelCode1"
+          Property="Woman/Properties[WomanOwnedSourceLevelCode1]" />
+        <CsdlProperty
+          Name="WomanOwnedCertificationCode1"
+          Property="Woman/Properties[WomanOwnedCertificationCode1]" />
+        <CsdlProperty
+          Name="WomanOwnedBusinessEnterpriseIndicator1"
+          Property="Woman/Properties[WomanOwnedBusinessEnterpriseIndicator1]" />
+        <CsdlProperty
+          Name="WomanOwnedCertificationDate1"
+          Property="Woman/Properties[WomanOwnedCertificationDate1]" />
+        <CsdlProperty
+          Name="WomanOwnedCertificationExpirationDate1"
+          Property="Woman/Properties[WomanOwnedCertificationExpirationDate1]" />
+        <CsdlProperty
+          Name="WomanOwnedCertificationNumber1"
+          Property="Woman/Properties[WomanOwnedCertificationNumber1]" />
+        <CsdlProperty
+          Name="WomanOwned1DateReceivedbyDnB"
+          Property="Woman/Properties[WomanOwned1DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="WomanOwnedSourceCodeName2"
+          Property="Woman/Properties[WomanOwnedSourceCodeName2]" />
+        <CsdlProperty
+          Name="WomanOwnedSourceLevelCode2"
+          Property="Woman/Properties[WomanOwnedSourceLevelCode2]" />
+        <CsdlProperty
+          Name="WomanOwnedCertificationCode2"
+          Property="Woman/Properties[WomanOwnedCertificationCode2]" />
+        <CsdlProperty
+          Name="WomanOwnedBusinessEnterpriseIndicator2"
+          Property="Woman/Properties[WomanOwnedBusinessEnterpriseIndicator2]" />
+        <CsdlProperty
+          Name="WomanOwnedCertificationDate2"
+          Property="Woman/Properties[WomanOwnedCertificationDate2]" />
+        <CsdlProperty
+          Name="WomanOwnedCertificationExpirationDate2"
+          Property="Woman/Properties[WomanOwnedCertificationExpirationDate2]" />
+        <CsdlProperty
+          Name="WomanOwnedCertificationNumber2"
+          Property="Woman/Properties[WomanOwnedCertificationNumber2]" />
+        <CsdlProperty
+          Name="WomanOwned2DateReceivedbyDnB"
+          Property="Woman/Properties[WomanOwned2DateReceivedbyDnB]" />
+        <CsdlProperty
+          Name="SmallBusinessIndicator"
+          Property="Woman/Properties[SmallBusinessIndicator]" />
+        <CsdlProperty
+          Name="WomanOwnedBusinessEnterpriseIndicator"
+          Property="Woman/Properties[WomanOwnedBusinessEnterpriseIndicator]" />
+        <CsdlProperty
+          Name="AlaskanNativeCorporationIndicator"
+          Property="Woman/Properties[AlaskanNativeCorporationIndicator]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>
