@@ -96,6 +96,7 @@
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\BrowseGreenBiz.lsml" />
+    <LightSwitchModel Include="Screens\Browse_nwCustomers.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

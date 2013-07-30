@@ -202,6 +202,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EdmxFile2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\EdmxFile3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EdmxFile3.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Service.lsml">
@@ -209,7 +214,9 @@
     </LightSwitchModel>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <LightSwitchModel Include="Properties\DataSources\ApplicationData.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\UserPrefsSet.lsml" />
     <LightSwitchModel Include="DataSources\DNBDeveloperSandboxContainerData\LocationLatLongs.lsml" />
@@ -234,6 +241,38 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EdmxFile2.Designer.cs</LastGenOutput>
       <EntityContainer>EdmxFile2</EntityContainer>
+    </LightSwitchExternalDataSource>
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Categories.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\CustomerDemographics.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Customers.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Employees.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Order_Details.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Orders.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Products.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Regions.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Shippers.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Suppliers.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Territories.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Alphabetical_list_of_products.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Category_Sales_for_1997.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Current_Product_Lists.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Customer_and_Suppliers_by_Cities.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Invoices.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Order_Details_Extendeds.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Order_Subtotals.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Orders_Qries.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Product_Sales_for_1997.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Products_Above_Average_Prices.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Products_by_Categories.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Sales_by_Categories.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Sales_Totals_by_Amounts.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Summary_of_Sales_by_Quarters.lsml" />
+    <LightSwitchModel Include="DataSources\NorthwindEntitiesData\Summary_of_Sales_by_Years.lsml" />
+    <LightSwitchModel Include="Properties\DataSources\NorthwindEntitiesData.lsml" />
+    <LightSwitchExternalDataSource Include="Properties\EdmxFile3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EdmxFile3.Designer.cs</LastGenOutput>
+      <EntityContainer>EdmxFile3</EntityContainer>
     </LightSwitchExternalDataSource>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

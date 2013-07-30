@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Territory">
+    <EntityType.Attributes>
+      <NotSearchable />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="TerritoryID"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="20" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="TerritoryDescription"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Employees"
+        Association="EmployeeTerritories"
+        FromEnd="Territories"
+        ToEnd="Employees" />
+      <NavigationProperty
+        Name="Region"
+        Association="FK_Territories_Region"
+        FromEnd="Territories"
+        ToEnd="Region">
+        <NavigationProperty.Attributes>
+          <Hidden />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="EmployeeTerritories">
+    <AssociationEnd
+      Name="Employees"
+      Multiplicity="Many"
+      EntityType="Employee" />
+    <AssociationEnd
+      Name="Territories"
+      Multiplicity="Many"
+      EntityType="Territory" />
+  </Association>
+  <EntityContainer
+    Name="NorthwindEntitiesData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Territories"
+      EntityType="Territory" />
+    <AssociationSet
+      Name="EmployeeTerritories"
+      Association="EmployeeTerritories">
+      <AssociationSetEnd
+        Name="Employees"
+        EntitySet="Employees" />
+      <AssociationSetEnd
+        Name="Territories"
+        EntitySet="Territories" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Territories_Single"
+      ReturnType="Territory">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="TerritoryID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="TerritoryID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Territories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="TerritoryID"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'TerritoryID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Territories_SingleOrDefault"
+      ReturnType="Territory">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="TerritoryID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="TerritoryID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Territories" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="TerritoryID"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'TerritoryID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="NorthwindEntitiesDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Territories">
+      <EntitySetMapping.Attributes>
+        <CsdlEntitySet
+          EntityTypeName="Territory"
+          EntityTypeNamespace="NorthwindModel"
+          Name="Territories"
+          EntityType="Territory" />
+        <CsdlProperty
+          Name="TerritoryID"
+          Property="Territory/Properties[TerritoryID]" />
+        <CsdlProperty
+          Name="TerritoryDescription"
+          Property="Territory/Properties[TerritoryDescription]" />
+        <CsdlProperty
+          Name="Employees"
+          Property="Territory/Properties[Employees]" />
+        <CsdlProperty
+          Name="Region"
+          Property="Territory/Properties[Region]" />
+        <CsdlForeignKeyProperty
+          Name="RegionID" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="EmployeeTerritories">
+      <AssociationSetMapping.Attributes>
+        <CsdlAssociation
+          Name="EmployeeTerritories"
+          Association="EmployeeTerritories" />
+        <CsdlAssociationSetEnd
+          End="NorthwindEntitiesData/Members[EmployeeTerritories]/Members[Territories]" />
+        <CsdlAssociationSetEnd
+          End="NorthwindEntitiesData/Members[EmployeeTerritories]/Members[Employees]" />
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

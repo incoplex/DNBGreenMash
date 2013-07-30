@@ -30,6 +30,9 @@
     <EntityContainerGroupProperty
       Name="EDREnvironmentalHazardRankContainerData"
       EntityContainer="EDREnvironmentalHazardRankContainerData" />
+    <EntityContainerGroupProperty
+      Name="NorthwindEntitiesData"
+      EntityContainer="NorthwindEntitiesData" />
   </EntityContainerGroup>
   <GlobalAttributeGroup
     Name="LightSwitchServiceApplicationGroup">

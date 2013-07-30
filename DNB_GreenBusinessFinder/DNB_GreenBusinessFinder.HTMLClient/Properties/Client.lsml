@@ -10,6 +10,8 @@
       Namespace="LightSwitchApplication" />
     <Partial
       IsPrimary="True" />
+    <HomeScreen
+      Value="BrowseGreenBiz" />
   </Application.Attributes>
   <EntityContainerGroup
     Name="DataWorkspace">
@@ -33,6 +35,9 @@
     <EntityContainerGroupProperty
       Name="EDREnvironmentalHazardRankContainerData"
       EntityContainer="EDREnvironmentalHazardRankContainerData" />
+    <EntityContainerGroupProperty
+      Name="NorthwindEntitiesData"
+      EntityContainer="NorthwindEntitiesData" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
