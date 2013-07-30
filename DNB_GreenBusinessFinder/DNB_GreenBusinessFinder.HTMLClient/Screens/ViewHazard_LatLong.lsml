@@ -5,12 +5,10 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="AddEditUserPrefs">
+    Name="ViewHazard_LatLong">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="ApplicationData" />
-      <DisplayName
-        Value="Add Custom Search Criteria" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -27,12 +25,12 @@
             View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
             <ContentItem.Attributes>
               <DisplayName
-                Value="Details" />
+                Value="Hazard Details" />
             </ContentItem.Attributes>
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="UserPrefs"
+              DataType="Hazard_LatLong"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,7 +40,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="AddEditUserPrefs/Properties[UserPrefs]" />
+                      Member="ViewHazard_LatLong/Properties[Hazard_LatLong]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -50,30 +48,53 @@
                 Name="left"
                 Kind="Group">
                 <ContentItem
-                  Name="NoteCode"
+                  Name="Latitude"
                   Kind="Value"
-                  DataType=":String">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="UserPrefs/Properties[NoteCode]" />
+                          Member="Hazard_LatLong/Properties[Latitude]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="NoteDescr"
+                  Name="Longitude"
                   Kind="Value"
-                  DataType=":String">
+                  DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="UserPrefs/Properties[NoteDescr]" />
+                          Member="Hazard_LatLong/Properties[Longitude]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="LocationLatLong"
+                  Kind="Details"
+                  DataType="LocationLatLong">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Hazard_LatLong/Properties[LocationLatLong]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate"
+                    Kind="Details"
+                    DataType="LocationLatLong">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -102,40 +123,86 @@
                 Name="right"
                 Kind="Group">
                 <ContentItem
-                  Name="URL"
+                  Name="EnvironmentalHazardRankingByUSPostalZipCode"
+                  Kind="Details"
+                  DataType="EnvironmentalHazardRankingByUSPostalZipCode">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Hazard_LatLong/Properties[EnvironmentalHazardRankingByUSPostalZipCode]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate1"
+                    Kind="Details"
+                    DataType="EnvironmentalHazardRankingByUSPostalZipCode">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="EnvironmentalHazardRankingByUS_GeographyId"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="UserPrefs/Properties[URL]" />
+                          Member="Hazard_LatLong/Properties[EnvironmentalHazardRankingByUS_GeographyId]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="GeoCode"
+                  Name="DUNSNumber"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="UserPrefs/Properties[Longitude]" />
+                          Member="Hazard_LatLong/Properties[DUNSNumber]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Latitude"
+                  Name="Green"
+                  Kind="Details"
+                  DataType="Green">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Hazard_LatLong/Properties[Green]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate2"
+                    Kind="Details"
+                    DataType="Green">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="Green_DUNSNumber"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="UserPrefs/Properties[Latitude]" />
+                          Member="Hazard_LatLong/Properties[Green_DUNSNumber]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -164,11 +231,31 @@
                 </ContentItem.PropertySources>
               </ContentItem>
             </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="False"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
           </ContentItem>
-          <ContentItem
-            Name="Greens"
-            Kind="Group"
-            View="Microsoft.LightSwitch.MobileWeb:RowsLayout" />
+          <ContentItem.PropertySources>
+            <ControlPropertySource
+              Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ControlPropertySource>
+          </ContentItem.PropertySources>
         </ContentItem>
         <ContentItem
           Name="Popups"
@@ -180,18 +267,8 @@
             <ScreenExpressionTree>
               <ChainExpression>
                 <ConstantExpression
-                  Value="Edit"
+                  Value="Browse"
                   ResultType=":String" />
-              </ChainExpression>
-            </ScreenExpressionTree>
-          </ControlPropertySource>
-          <ControlPropertySource
-            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ShowAsDialog]">
-            <ScreenExpressionTree>
-              <ChainExpression>
-                <ConstantExpression
-                  Value="True"
-                  ResultType=":Boolean" />
               </ChainExpression>
             </ScreenExpressionTree>
           </ControlPropertySource>
@@ -224,24 +301,83 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="UserPrefs"
-        PropertyType="UserPrefs">
+        Name="Hazard_LatLong"
+        PropertyType="Hazard_LatLong">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenCollectionProperty
+        Name="Greens"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$Green">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="GreensQuery"
+            ReturnType="Green*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Green/Properties[DUNSNumber]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ParameterExpression
+                      Parameter="DUNSNumber" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="DNBDeveloperSandboxContainerData/Members[Greens]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="DUNSNumber"
+                ParameterType=":String?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ViewHazard_LatLong/Properties[Greens]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="EnvironmentalHazardRankingByUSPostalZipCode"
+        PropertyType="EnvironmentalHazardRankingByUSPostalZipCode">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="EDREnvironmentalHazardRankContainerData/Members[EnvironmentalHazardRankingByUSPostalZipCodes_SingleOrDefault]">
+              <ArgumentExpression
+                Parameter="GeographyId" />
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
       </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showAddEditUserPrefs">
+      Name="showViewHazard_LatLong">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="AddEditUserPrefs" />
+          TargetScreen="ViewHazard_LatLong" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="UserPrefs"
-        ParameterType="UserPrefs" />
+        Name="Hazard_LatLong"
+        ParameterType="Hazard_LatLong" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

@@ -99,6 +99,9 @@
     <LightSwitchModel Include="Screens\BrowseEDREnvironmentHazards.lsml" />
     <LightSwitchModel Include="Screens\BrowseGreenBiz.lsml" />
     <LightSwitchModel Include="Screens\Browse_nwCustomers.lsml" />
+    <LightSwitchModel Include="Screens\SearchGreensByState.lsml" />
+    <LightSwitchModel Include="Screens\ViewGreen.lsml" />
+    <LightSwitchModel Include="Screens\ViewHazard_LatLong.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

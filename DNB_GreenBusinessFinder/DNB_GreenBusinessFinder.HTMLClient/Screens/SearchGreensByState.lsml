@@ -5,10 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowseEDREnvironmentHazards">
+    Name="SearchGreensByState">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="EDREnvironmentalHazardRankContainerData" />
+        EntityContainer="DNBDeveloperSandboxContainerData" />
+      <DisplayName
+        Value="Search Green Businesses" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -20,54 +22,59 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="EnvironmentalHazardRankingByUSPostalZipCodeList"
-            Kind="Group"
-            View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+            Name="GreenList"
+            Kind="Group">
             <ContentItem
-              Name="EnvironmentalHazardRankingByUSPostalZipCode"
+              Name="SearchByState1"
+              Kind="Value"
+              DataType=":String"
+              View="Microsoft.LightSwitch.MobileWeb:TextBox">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Enter State code or Zip code" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="SearchGreensByState/Properties[SearchByState]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="Green"
               Kind="Collection"
-              DataType="CollectionView$EnvironmentalHazardRankingByUSPostalZipCode"
+              DataType="CollectionView$Green"
               View="Microsoft.LightSwitch.MobileWeb:List">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseEDREnvironmentHazards/Properties[EnvironmentalHazardRankingByUSPostalZipCodes]" />
+                      Member="SearchGreensByState/Properties[Greens]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="RowTemplate"
                 Kind="Details"
-                DataType="EnvironmentalHazardRankingByUSPostalZipCode"
-                View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+                DataType="Green"
+                View="Microsoft.LightSwitch.MobileWeb:Summary">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="GeographyName"
+                  Name="StateAbbrv"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:TextBox">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="EnvironmentalHazardRankingByUSPostalZipCode/Properties[GeographyName]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="State"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="EnvironmentalHazardRankingByUSPostalZipCode/Properties[State]" />
+                          Member="Green/Properties[StateAbbrv]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -75,64 +82,52 @@
                 <ContentItem
                   Name="ZipCode"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:TextBox">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="EnvironmentalHazardRankingByUSPostalZipCode/Properties[ZipCode]" />
+                          Member="Green/Properties[ZipCode]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="EnviromentalHazardRank"
-                  Kind="Value"
-                  DataType=":Int16">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="EnvironmentalHazardRankingByUSPostalZipCode/Properties[EnviromentalHazardRank]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Latitude"
-                  Kind="Value"
-                  DataType=":Decimal?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="EnvironmentalHazardRankingByUSPostalZipCode/Properties[Latitude]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Longitude"
-                  Kind="Value"
-                  DataType=":Decimal?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="EnvironmentalHazardRankingByUSPostalZipCode/Properties[Longitude]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="GeographyType1"
+                  Name="Company"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="EnvironmentalHazardRankingByUSPostalZipCode/Properties[GeographyType]" />
+                          Member="Green/Properties[Company]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="City"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Green/Properties[City]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ZipCode1"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Green/Properties[ZipCode]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -197,40 +192,94 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="EnvironmentalHazardRankingByUSPostalZipCodes"
+        Name="Greens"
         DisableSearch="True"
         PageSize="45"
-        PropertyType="CollectionView$EnvironmentalHazardRankingByUSPostalZipCode">
+        PropertyType="CollectionView$Green">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="EnvironmentalHazardRankingByUSPostalZipCodesQuery"
-            ReturnType="EnvironmentalHazardRankingByUSPostalZipCode*">
+            Name="GreensQuery"
+            ReturnType="Green*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Or">
+                  <BinaryExpression.Left>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="Green/Properties[StateAbbrv]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="SearchParameter" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="Green/Properties[ZipCode]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="SearchParameter" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="EDREnvironmentalHazardRankContainerData/Members[EnvironmentalHazardRankingByUSPostalZipCodes]" />
+                  Member="DNBDeveloperSandboxContainerData/Members[Greens]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="SearchParameter"
+                ParameterType=":String?" />
+            </ScreenQueryDefinition.Parameters>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseEDREnvironmentHazards/Properties[EnvironmentalHazardRankingByUSPostalZipCodes]/Query" />
+              Target="SearchGreensByState/Properties[Greens]/Query">
+              <ArgumentExpression
+                Parameter="SearchParameter">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="SearchGreensByState/Properties[SearchByState]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="SearchByState"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowseEDREnvironmentHazards">
+      Name="showSearchGreensByState">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowseEDREnvironmentHazards" />
+          TargetScreen="SearchGreensByState" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>
