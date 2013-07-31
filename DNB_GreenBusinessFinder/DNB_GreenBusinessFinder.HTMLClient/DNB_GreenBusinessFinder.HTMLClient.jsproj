@@ -65,6 +65,15 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Screens\BrowseGreenBiz.lsml.js">
+      <DependentUpon>BrowseGreenBiz.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BrowseGreenMap.lsml.js">
+      <DependentUpon>BrowseGreenMap.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Browse_nwCustomers.lsml.js">
+      <DependentUpon>Browse_nwCustomers.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.0.js" />
     <Content Include="Scripts\datajs-1.1.0.min.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -99,10 +108,12 @@
     <LightSwitchModel Include="Screens\AddEditUserPrefs.lsml" />
     <LightSwitchModel Include="Screens\BrowseEDREnvironmentHazards.lsml" />
     <LightSwitchModel Include="Screens\BrowseGreenBiz.lsml" />
+    <LightSwitchModel Include="Screens\BrowseGreenMap.lsml" />
+    <LightSwitchModel Include="Screens\BrowseMinorityOwnedBiz.lsml" />
+    <LightSwitchModel Include="Screens\BrowseVeteranOnwed.lsml" />
     <LightSwitchModel Include="Screens\Browse_nwCustomers.lsml" />
     <LightSwitchModel Include="Screens\SearchGreensByState.lsml" />
     <LightSwitchModel Include="Screens\ViewGreen.lsml" />
-    <LightSwitchModel Include="Screens\ViewHazard_LatLong.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

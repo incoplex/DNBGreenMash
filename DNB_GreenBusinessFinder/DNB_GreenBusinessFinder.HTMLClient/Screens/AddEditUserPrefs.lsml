@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="ApplicationData" />
       <DisplayName
-        Value="Add Custom Search Criteria" />
+        Value="Create custom search terms" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -165,10 +165,6 @@
               </ContentItem>
             </ContentItem>
           </ContentItem>
-          <ContentItem
-            Name="Greens"
-            Kind="Group"
-            View="Microsoft.LightSwitch.MobileWeb:RowsLayout" />
         </ContentItem>
         <ContentItem
           Name="Popups"

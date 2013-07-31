@@ -278,7 +278,7 @@
     <LightSwitchModel Include="DataSources\ApplicationData\JoinEDR_DNBs.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\DNBGreen_LatLongLocs.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\DNBGreen_Minorities.lsml" />
-    <LightSwitchModel Include="DataSources\ApplicationData\Query1.lsml">
+    <LightSwitchModel Include="DataSources\ApplicationData\SelectGreenMinorityOwner.lsml">
       <DependentUpon>DNBGreen_Minorities.lsml</DependentUpon>
     </LightSwitchModel>
     <None Include="Web.Debug.config">

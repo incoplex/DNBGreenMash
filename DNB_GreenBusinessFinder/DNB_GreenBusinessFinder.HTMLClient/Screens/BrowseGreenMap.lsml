@@ -5,12 +5,10 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="Browse_nwCustomers">
+    Name="BrowseGreenMap">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="NorthwindEntitiesData" />
-      <DisplayName
-        Value="Browse Northwind DB Customers" />
+        EntityContainer="DNBDeveloperSandboxContainerData" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,26 +20,25 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="CustomerList"
-            Kind="Group"
-            View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+            Name="GreenList"
+            Kind="Group">
             <ContentItem
-              Name="Customer"
+              Name="Green"
               Kind="Collection"
-              DataType="CollectionView$Customer"
-              View="Microsoft.LightSwitch.MobileWeb:CollectionCustomControl">
+              DataType="CollectionView$Green"
+              View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Browse_nwCustomers/Properties[Customers]" />
+                      Member="BrowseGreenMap/Properties[Greens]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="RowTemplate"
+                Name="GreenPin"
                 Kind="Details"
-                DataType="Customer"
+                DataType="Green"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
@@ -49,107 +46,124 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="CompanyName"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Customer/Properties[CompanyName]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Address1"
+                  Name="Company"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Customer/Properties[Address]" />
+                          Member="Green/Properties[Company]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="City1"
+                  Name="Address"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Customer/Properties[City]" />
+                          Member="Green/Properties[Address]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Country1"
+                  Name="City"
                   Kind="Value"
                   DataType=":String?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Customer/Properties[Country]" />
+                          Member="Green/Properties[City]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Country"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Green/Properties[Country]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="StateAbbrv"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Green/Properties[StateAbbrv]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="ZipCode"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Green/Properties[ZipCode]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="IndustryCodeDesc1"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Green/Properties[IndustryCodeDesc1]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[HeightSizingMode]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="True"
-                          ResultType=":Boolean" />
+                          Value="StretchToContainer"
+                          ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="Browse_nwCustomers/Methods[showDialog]">
-                        <ArgumentExpression
-                          Parameter="dialogName">
-                          <ConstantExpression
-                            Value="Customers_selectedItem"
-                            ResultType=":String" />
-                        </ArgumentExpression>
-                      </CallExpression>
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[HeightSizingMode]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="StretchToContainer"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem.PropertySources>
               <ControlPropertySource
-                Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
+                Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
                 <ScreenExpressionTree>
                   <ChainExpression>
-                    <ConstantExpression
-                      Value="False"
-                      ResultType=":Boolean" />
+                    <CallExpression
+                      Target="BrowseGreenMap/Methods[showDialog]">
+                      <ArgumentExpression
+                        Parameter="dialogName">
+                        <ConstantExpression
+                          Value="GreenB_selected"
+                          ResultType=":String" />
+                      </ArgumentExpression>
+                    </CallExpression>
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
@@ -183,146 +197,214 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:DialogPages">
           <ContentItem
-            Name="Customers_selectedItem"
+            Name="GreenB_selected"
             Kind="Details"
-            DataType="Customer"
-            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            DataType="Green">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Selected Green Business" />
+            </ContentItem.Attributes>
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="Browse_nwCustomers/Properties[Customers]" />
+                    Member="BrowseGreenMap/Properties[Greens]" />
                   <MemberExpression
                     Member="selectedItem" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
             <ContentItem
-              Name="CompanyName1"
-              Kind="Value"
-              DataType=":String">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="Customer/Properties[CompanyName]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-            </ContentItem>
-            <ContentItem
-              Name="ContactName"
+              Name="Company1"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[ContactName]" />
+                      Member="Green/Properties[Company]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
-              Name="ContactTitle"
+              Name="CongressDistrict1"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[ContactTitle]" />
+                      Member="Green/Properties[CongressDistrict]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
-              Name="Address"
+              Name="GreenBusinessIndicator1"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[Address]" />
+                      Member="Green/Properties[GreenBusinessIndicator]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
-              Name="City"
+              Name="GreenSourceCodeName11"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[City]" />
+                      Member="Green/Properties[GreenSourceCodeName1]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
-              Name="Region"
+              Name="GreenCertificationDate11"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[Region]" />
+                      Member="Green/Properties[GreenCertificationDate1]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
-              Name="PostalCode"
+              Name="GreenCertificationExpirationDate11"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[PostalCode]" />
+                      Member="Green/Properties[GreenCertificationExpirationDate1]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
-              Name="Country"
+              Name="GreenSourceCodeName21"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[Country]" />
+                      Member="Green/Properties[GreenSourceCodeName2]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
-              Name="Phone"
+              Name="GreenCertificationDate21"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[Phone]" />
+                      Member="Green/Properties[GreenCertificationDate2]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
             </ContentItem>
             <ContentItem
-              Name="Fax"
+              Name="GreenCertificationExpirationDate21"
               Kind="Value"
               DataType=":String?">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Customer/Properties[Fax]" />
+                      Member="Green/Properties[GreenCertificationExpirationDate2]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="GreenSourceCodeName31"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Green/Properties[GreenSourceCodeName3]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="GreenCertificationDate31"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Green/Properties[GreenCertificationDate3]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="GreenCertificationExpirationDate31"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Green/Properties[GreenCertificationExpirationDate3]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="GreenSourceCodeName41"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Green/Properties[GreenSourceCodeName4]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="GreenCertificationDate41"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Green/Properties[GreenCertificationDate4]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="GreenCertificationExpirationDate41"
+              Kind="Value"
+              DataType=":String?">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Green/Properties[GreenCertificationExpirationDate4]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -369,21 +451,21 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Customers"
+        Name="Greens"
         DisableSearch="True"
         PageSize="45"
-        PropertyType="CollectionView$Customer">
+        PropertyType="CollectionView$Green">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="CustomersQuery"
-            ReturnType="Customer*">
+            Name="GreensQuery"
+            ReturnType="Green*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="NorthwindEntitiesData/Members[Customers]" />
+                  Member="DNBDeveloperSandboxContainerData/Members[Greens]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -391,7 +473,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="Browse_nwCustomers/Properties[Customers]/Query" />
+              Target="BrowseGreenMap/Properties[Greens]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -399,10 +481,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowse_nwCustomers">
+      Name="showBrowseGreenMap">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="Browse_nwCustomers" />
+          TargetScreen="BrowseGreenMap" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

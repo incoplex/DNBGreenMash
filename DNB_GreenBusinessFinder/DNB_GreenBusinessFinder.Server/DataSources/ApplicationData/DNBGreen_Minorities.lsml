@@ -34,7 +34,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="DUNSNumber"
+        Name="jDUNSNumber"
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />

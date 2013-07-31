@@ -1,6 +1,6 @@
-﻿/// <reference path="jquery-1.7.1.js" />
-/// <reference path="jquery.mobile-1.1.1.js" />
-/// <reference path="msls-1.0.0.js" />
+﻿/// <reference path="jquery-1.9.1.js" />
+/// <reference path="jquery.mobile-1.3.1.js" />
+/// <reference path="msls-2.0.0.js" />
 
 (function ($) {
     var _credentialsKey = "Ao75sYhQSfLgssT0QkO9n22xt0lgxzntrZ1xpCwLOC-kGhI584OYED3viFXLIWgC";

@@ -416,7 +416,7 @@
       EntityContainer="ApplicationData"
       EntitySet="DNBGreen_Minorities">
       <VirtualAssociationSetEndProperty
-        EntityProperty="Green_DUNSNumber" />
+        EntityProperty="jDUNSNumber" />
     </VirtualAssociationSetEnd>
     <VirtualAssociationSetEnd
       Name="Green"
