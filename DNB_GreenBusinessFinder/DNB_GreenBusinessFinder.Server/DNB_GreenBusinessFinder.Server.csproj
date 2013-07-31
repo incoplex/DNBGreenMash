@@ -275,7 +275,12 @@
       <EntityContainer>EdmxFile3</EntityContainer>
     </LightSwitchExternalDataSource>
     <LightSwitchModel Include="DataSources\ApplicationData\NoteTypes.lsml" />
-    <LightSwitchModel Include="DataSources\ApplicationData\Hazard_LatLongs.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\JoinEDR_DNBs.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\DNBGreen_LatLongLocs.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\DNBGreen_Minorities.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Query1.lsml">
+      <DependentUpon>DNBGreen_Minorities.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

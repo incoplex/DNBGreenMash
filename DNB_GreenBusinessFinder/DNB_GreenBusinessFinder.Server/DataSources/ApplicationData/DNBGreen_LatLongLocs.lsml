@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="DNBGreen_LatLongLoc">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DUNSnumber"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="dnb_lat"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="dnb_long"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <VirtualNavigationProperty
+        Name="LocationLatLong"
+        FromEnd="DNBGreen_LatLongLoc"
+        ToEnd="LocationLatLong"
+        VirtualAssociation="DNBGreen_LatLongLoc_LocationLatLong" />
+      <NavigationProperty
+        Name="JoinEDR_DNB"
+        Association="JoinEDR_DNB_DNBGreen_LatLongLoc"
+        FromEnd="DNBGreen_LatLongLoc"
+        ToEnd="JoinEDR_DNB" />
+      <VirtualNavigationProperty
+        Name="Green"
+        FromEnd="DNBGreen_LatLongLoc"
+        ToEnd="Green"
+        VirtualAssociation="DNBGreen_LatLongLoc_Green" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="ApplicationData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="DNBGreen_LatLongLocs"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="DNBGreen_LatLongLoc" />
+    <QueryOperation
+      Name="DNBGreen_LatLongLocs_Single"
+      ReturnType="DNBGreen_LatLongLoc">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="DNBGreen_LatLongLocs" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="DNBGreen_LatLongLocs_SingleOrDefault"
+      ReturnType="DNBGreen_LatLongLoc">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="DNBGreen_LatLongLocs" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="JoinEDR_DNB_DNBGreen_LatLongLocs"
+      Association="JoinEDR_DNB_DNBGreen_LatLongLoc">
+      <AssociationSetEnd
+        Name="JoinEDR_DNB"
+        EntitySet="JoinEDR_DNBs" />
+      <AssociationSetEnd
+        Name="DNBGreen_LatLongLoc"
+        EntitySet="DNBGreen_LatLongLocs" />
+    </AssociationSet>
+  </EntityContainer>
+  <VirtualAssociation
+    Name="DNBGreen_LatLongLoc_LocationLatLong">
+    <VirtualAssociationEnd
+      Name="DNBGreen_LatLongLoc"
+      Multiplicity="One"
+      EntityType="DNBGreen_LatLongLoc" />
+    <VirtualAssociationEnd
+      Name="LocationLatLong"
+      EntityType="LocationLatLong" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="JoinGreen_LatLongLoc_LocationLatLong_Set"
+    VirtualAssociation="DNBGreen_LatLongLoc_LocationLatLong">
+    <VirtualAssociationSetEnd
+      Name="DNBGreen_LatLongLoc"
+      EntityContainer="ApplicationData"
+      EntitySet="DNBGreen_LatLongLocs">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="DUNSnumber" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="LocationLatLong"
+      EntityContainer="DNBDeveloperSandboxContainerData"
+      EntitySet="LocationLatLongs">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="DUNSNumber" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
+  <Association
+    Name="JoinEDR_DNB_DNBGreen_LatLongLoc">
+    <AssociationEnd
+      Name="JoinEDR_DNB"
+      EntityType="JoinEDR_DNB" />
+    <AssociationEnd
+      Name="DNBGreen_LatLongLoc"
+      Multiplicity="One"
+      EntityType="DNBGreen_LatLongLoc">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <DataService
+    Name="ApplicationDataMapping">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <AssociationSetMapping
+      AssociationSet="JoinEDR_DNB_DNBGreen_LatLongLocs">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="JoinEDR_DNB_DNBGreen_LatLongLocs" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[JoinEDR_DNB_DNBGreen_LatLongLocs]/Members[JoinEDR_DNB]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[JoinEDR_DNB_DNBGreen_LatLongLocs]/Members[DNBGreen_LatLongLoc]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

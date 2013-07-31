@@ -5,10 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="EnvironmentalHazardRankingByUSPostalZipCode">
-    <EntityType.Attributes>
-      <NotSearchable />
-    </EntityType.Attributes>
+    Name="JoinEDR_DNB">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -19,75 +16,86 @@
     </EntityType.Methods>
     <EntityType.Properties>
       <KeyProperty
-        Name="GeographyId"
-        PropertyType=":String">
+        Name="Id"
+        PropertyType=":Int32">
         <KeyProperty.Attributes>
           <Required />
+          <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="GeographyType"
-        PropertyType=":String?" />
-      <EntityProperty
-        Name="GeographyName"
-        PropertyType=":String?" />
-      <EntityProperty
-        Name="State"
-        PropertyType=":String?" />
-      <EntityProperty
-        Name="StateFipsCode"
-        PropertyType=":String?" />
-      <EntityProperty
-        Name="ZipCode"
-        PropertyType=":String?" />
-      <EntityProperty
-        Name="EnviromentalHazardIndex"
-        PropertyType=":Decimal">
+        Name="RowVersion"
+        PropertyType=":RowVersion">
         <EntityProperty.Attributes>
-          <Required />
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="EnviromentalHazardRank"
-        PropertyType=":Int16">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Latitude"
+        Name="d_lat"
         PropertyType=":Decimal?">
         <EntityProperty.Attributes>
           <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Longitude"
+        Name="d_long"
         PropertyType=":Decimal?">
         <EntityProperty.Attributes>
           <NotSearchable />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="e_GeoID"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="d_DUNSNumber"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <VirtualNavigationProperty
-        Name="JoinEDR_DNB"
-        FromEnd="EnvironmentalHazardRankingByUSPostalZipCode"
-        ToEnd="JoinEDR_DNB"
+        Name="EnvironmentalHazardRankingByUSPostalZipCode"
+        FromEnd="JoinEDR_DNB"
+        ToEnd="EnvironmentalHazardRankingByUSPostalZipCode"
         VirtualAssociation="JoinEDR_DNB_EnvironmentalHazardRankingByUS" />
+      <NavigationProperty
+        Name="DNBGreen_LatLongLoc"
+        Association="JoinEDR_DNB_DNBGreen_LatLongLoc"
+        FromEnd="JoinEDR_DNB"
+        ToEnd="DNBGreen_LatLongLoc" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
-    Name="EDREnvironmentalHazardRankContainerData">
+    Name="ApplicationData">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="EnvironmentalHazardRankingByUSPostalZipCodes"
-      EntityType="EnvironmentalHazardRankingByUSPostalZipCode" />
+      Name="JoinEDR_DNBs"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="JoinEDR_DNB" />
     <QueryOperation
-      Name="EnvironmentalHazardRankingByUSPostalZipCodes_Single"
-      ReturnType="EnvironmentalHazardRankingByUSPostalZipCode">
+      Name="JoinEDR_DNBs_Single"
+      ReturnType="JoinEDR_DNB">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -100,12 +108,12 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="GeographyId" />
+                  Member="Id" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ParameterExpression
-                Parameter="GeographyId" />
+                Parameter="Id" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -113,21 +121,21 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="EnvironmentalHazardRankingByUSPostalZipCodes" />
+            Member="JoinEDR_DNBs" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="GeographyId"
-        ParameterType=":String?">
+        Name="Id"
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'GeographyId' key property of the entity to retrieve." />
+            Value="The value of the 'Id' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="EnvironmentalHazardRankingByUSPostalZipCodes_SingleOrDefault"
-      ReturnType="EnvironmentalHazardRankingByUSPostalZipCode">
+      Name="JoinEDR_DNBs_SingleOrDefault"
+      ReturnType="JoinEDR_DNB">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -140,12 +148,12 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="GeographyId" />
+                  Member="Id" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ParameterExpression
-                Parameter="GeographyId" />
+                Parameter="Id" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -153,62 +161,63 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="EnvironmentalHazardRankingByUSPostalZipCodes" />
+            Member="JoinEDR_DNBs" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="GeographyId"
-        ParameterType=":String?">
+        Name="Id"
+        ParameterType=":Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'GeographyId' key property of the entity to retrieve." />
+            Value="The value of the 'Id' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
   </EntityContainer>
+  <VirtualAssociation
+    Name="JoinEDR_DNB_EnvironmentalHazardRankingByUS">
+    <VirtualAssociationEnd
+      Name="JoinEDR_DNB"
+      Multiplicity="One"
+      EntityType="JoinEDR_DNB" />
+    <VirtualAssociationEnd
+      Name="EnvironmentalHazardRankingByUSPostalZipCode"
+      EntityType="EnvironmentalHazardRankingByUSPostalZipCode" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="JoinEDR_DNB_EnvironmentalHazardRankingByUS_Set"
+    VirtualAssociation="JoinEDR_DNB_EnvironmentalHazardRankingByUS">
+    <VirtualAssociationSetEnd
+      Name="JoinEDR_DNB"
+      EntityContainer="ApplicationData"
+      EntitySet="JoinEDR_DNBs">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="d_lat" />
+      <VirtualAssociationSetEndProperty
+        EntityProperty="d_long" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="EnvironmentalHazardRankingByUSPostalZipCode"
+      EntityContainer="EDREnvironmentalHazardRankContainerData"
+      EntitySet="EnvironmentalHazardRankingByUSPostalZipCodes">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Latitude" />
+      <VirtualAssociationSetEndProperty
+        EntityProperty="Longitude" />
+    </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
   <DataService
-    Name="EDREnvironmentalHazardRankContainerDataDataService">
+    Name="ApplicationDataMapping">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="EnvironmentalHazardRankingByUSPostalZipCodes">
+      EntitySet="JoinEDR_DNBs">
       <EntitySetMapping.Attributes>
-        <CsdlEntitySet
-          EntityTypeName="EnvironmentalHazardRankingByUSPostalZipCode"
-          EntityTypeNamespace="EDR.EnvironmentalHazardRank"
-          Name="EnvironmentalHazardRankingByUSPostalZipCode"
-          EntityType="EnvironmentalHazardRankingByUSPostalZipCode" />
-        <CsdlProperty
-          Name="GeographyId"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[GeographyId]" />
-        <CsdlProperty
-          Name="GeographyType"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[GeographyType]" />
-        <CsdlProperty
-          Name="GeographyName"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[GeographyName]" />
-        <CsdlProperty
-          Name="State"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[State]" />
-        <CsdlProperty
-          Name="StateFipsCode"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[StateFipsCode]" />
-        <CsdlProperty
-          Name="ZipCode"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[ZipCode]" />
-        <CsdlProperty
-          Name="EnviromentalHazardIndex"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[EnviromentalHazardIndex]" />
-        <CsdlProperty
-          Name="EnviromentalHazardRank"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[EnviromentalHazardRank]" />
-        <CsdlProperty
-          Name="Latitude"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[Latitude]" />
-        <CsdlProperty
-          Name="Longitude"
-          Property="EnvironmentalHazardRankingByUSPostalZipCode/Properties[Longitude]" />
+        <SsdlForeignKeyProperty
+          Name="Id"
+          Nullable="False"
+          Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

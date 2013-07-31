@@ -143,10 +143,15 @@
         ToEnd="UserPrefs"
         VirtualAssociation="UserPrefs_Green" />
       <VirtualNavigationProperty
-        Name="Hazard_LatLongs"
+        Name="DNBGreen_LatLongLoc"
         FromEnd="Green"
-        ToEnd="Hazard_LatLong"
-        VirtualAssociation="Green_Hazard_LatLong" />
+        ToEnd="DNBGreen_LatLongLoc"
+        VirtualAssociation="DNBGreen_LatLongLoc_Green" />
+      <VirtualNavigationProperty
+        Name="DNBGreen_Minority"
+        FromEnd="Green"
+        ToEnd="DNBGreen_Minority"
+        VirtualAssociation="DNBGreen_Minority_Green" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -366,18 +371,25 @@
     </EntitySetMapping>
   </DataService>
   <VirtualAssociation
-    Name="Green_Hazard_LatLong">
+    Name="DNBGreen_LatLongLoc_Green">
+    <VirtualAssociationEnd
+      Name="DNBGreen_LatLongLoc"
+      EntityType="DNBGreen_LatLongLoc" />
     <VirtualAssociationEnd
       Name="Green"
+      Multiplicity="One"
       EntityType="Green" />
-    <VirtualAssociationEnd
-      Name="Hazard_LatLong"
-      Multiplicity="Many"
-      EntityType="Hazard_LatLong" />
   </VirtualAssociation>
   <VirtualAssociationSet
-    Name="Green_Hazard_LatLong_Set"
-    VirtualAssociation="Green_Hazard_LatLong">
+    Name="DNBGreen_LatLongLoc_Green_Set"
+    VirtualAssociation="DNBGreen_LatLongLoc_Green">
+    <VirtualAssociationSetEnd
+      Name="DNBGreen_LatLongLoc"
+      EntityContainer="ApplicationData"
+      EntitySet="DNBGreen_LatLongLocs">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="DUNSnumber" />
+    </VirtualAssociationSetEnd>
     <VirtualAssociationSetEnd
       Name="Green"
       EntityContainer="DNBDeveloperSandboxContainerData"
@@ -385,12 +397,33 @@
       <VirtualAssociationSetEndProperty
         EntityProperty="DUNSNumber" />
     </VirtualAssociationSetEnd>
+  </VirtualAssociationSet>
+  <VirtualAssociation
+    Name="DNBGreen_Minority_Green">
+    <VirtualAssociationEnd
+      Name="DNBGreen_Minority"
+      EntityType="DNBGreen_Minority" />
+    <VirtualAssociationEnd
+      Name="Green"
+      Multiplicity="One"
+      EntityType="Green" />
+  </VirtualAssociation>
+  <VirtualAssociationSet
+    Name="DNBGreen_Minority_Green_Set"
+    VirtualAssociation="DNBGreen_Minority_Green">
     <VirtualAssociationSetEnd
-      Name="Hazard_LatLong"
+      Name="DNBGreen_Minority"
       EntityContainer="ApplicationData"
-      EntitySet="Hazard_LatLongs">
+      EntitySet="DNBGreen_Minorities">
       <VirtualAssociationSetEndProperty
         EntityProperty="Green_DUNSNumber" />
+    </VirtualAssociationSetEnd>
+    <VirtualAssociationSetEnd
+      Name="Green"
+      EntityContainer="DNBDeveloperSandboxContainerData"
+      EntitySet="Greens">
+      <VirtualAssociationSetEndProperty
+        EntityProperty="DUNSNumber" />
     </VirtualAssociationSetEnd>
   </VirtualAssociationSet>
 </ServiceApplication>

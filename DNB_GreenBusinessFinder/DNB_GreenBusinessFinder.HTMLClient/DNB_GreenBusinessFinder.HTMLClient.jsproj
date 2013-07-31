@@ -78,6 +78,7 @@
     <Content Include="Scripts\jquery.mobile-1.3.1.js" />
     <Content Include="Scripts\jquery.mobile-1.3.1.min.js" />
     <Content Include="Scripts\jquery.mobile-1.3.1.min.map" />
+    <Content Include="Scripts\lightswitch.bing-maps.js" />
     <Content Include="Scripts\msls.js" />
     <Content Include="Scripts\msls-2.0.0-vsdoc.js" />
     <Content Include="Scripts\msls-2.0.0.js" />

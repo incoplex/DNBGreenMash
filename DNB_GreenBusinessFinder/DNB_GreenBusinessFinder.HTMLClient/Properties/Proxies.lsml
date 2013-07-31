@@ -349,43 +349,73 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Hazard_LatLong" />
+        Target="ServiceInterface:JoinEDR_DNB" />
     </EntityType.Attributes>
   </EntityType>
   <VirtualAssociation>
     <VirtualAssociation.Attributes>
       <Proxy
-        Target="ServiceInterface:Hazard_LatLong_LocationLatLong" />
+        Target="ServiceInterface:JoinEDR_DNB_EnvironmentalHazardRankingByUS" />
     </VirtualAssociation.Attributes>
   </VirtualAssociation>
   <VirtualAssociationSet>
     <VirtualAssociationSet.Attributes>
       <Proxy
-        Target="ServiceInterface:Hazard_LatLong_LocationLatLong_Set" />
+        Target="ServiceInterface:JoinEDR_DNB_EnvironmentalHazardRankingByUS_Set" />
     </VirtualAssociationSet.Attributes>
   </VirtualAssociationSet>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:DNBGreen_LatLongLoc" />
+    </EntityType.Attributes>
+  </EntityType>
   <VirtualAssociation>
     <VirtualAssociation.Attributes>
       <Proxy
-        Target="ServiceInterface:Hazard_LatLong_EnvironmentalHazardRankingByUS" />
+        Target="ServiceInterface:DNBGreen_LatLongLoc_LocationLatLong" />
     </VirtualAssociation.Attributes>
   </VirtualAssociation>
   <VirtualAssociationSet>
     <VirtualAssociationSet.Attributes>
       <Proxy
-        Target="ServiceInterface:Hazard_LatLong_EnvironmentalHazardRankingByUS_Set" />
+        Target="ServiceInterface:JoinGreen_LatLongLoc_LocationLatLong_Set" />
     </VirtualAssociationSet.Attributes>
   </VirtualAssociationSet>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:JoinEDR_DNB_DNBGreen_LatLongLoc" />
+    </Association.Attributes>
+  </Association>
   <VirtualAssociation>
     <VirtualAssociation.Attributes>
       <Proxy
-        Target="ServiceInterface:Green_Hazard_LatLong" />
+        Target="ServiceInterface:DNBGreen_LatLongLoc_Green" />
     </VirtualAssociation.Attributes>
   </VirtualAssociation>
   <VirtualAssociationSet>
     <VirtualAssociationSet.Attributes>
       <Proxy
-        Target="ServiceInterface:Green_Hazard_LatLong_Set" />
+        Target="ServiceInterface:DNBGreen_LatLongLoc_Green_Set" />
+    </VirtualAssociationSet.Attributes>
+  </VirtualAssociationSet>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:DNBGreen_Minority" />
+    </EntityType.Attributes>
+  </EntityType>
+  <VirtualAssociation>
+    <VirtualAssociation.Attributes>
+      <Proxy
+        Target="ServiceInterface:DNBGreen_Minority_Green" />
+    </VirtualAssociation.Attributes>
+  </VirtualAssociation>
+  <VirtualAssociationSet>
+    <VirtualAssociationSet.Attributes>
+      <Proxy
+        Target="ServiceInterface:DNBGreen_Minority_Green_Set" />
     </VirtualAssociationSet.Attributes>
   </VirtualAssociationSet>
 </Application>
