@@ -1,7 +1,9 @@
 This is a working application in its own right, but some of the functions are only partially implemented and need to 
 be finished. 
 
-To set up this Project file in Visual Studio, please see D&BGreenBusinessFinder_InstallationGuide.pdf
+For full project information and a setup guide, please see my article on codeproject.com 
+at this link >> http://www.codeproject.com/Articles/619031/D-B-Green-Business-Finder
+
 
 -------------------------------------------------------------------------------------
 
